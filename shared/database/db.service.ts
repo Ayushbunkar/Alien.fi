@@ -1,23 +1,23 @@
 import { createClient } from '@supabase/supabase-js';
+import { Logger } from "@/shared/utils/logger";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 
 if (!supabaseUrl) {
-  throw new Error("Missing NEXT_PUBLIC_SUPABASE_URL environment variable.");
+  Logger.warn("Missing NEXT_PUBLIC_SUPABASE_URL environment variable.");
 }
 if (!supabaseAnonKey) {
-  throw new Error("Missing NEXT_PUBLIC_SUPABASE_ANON_KEY environment variable.");
+  Logger.warn("Missing NEXT_PUBLIC_SUPABASE_ANON_KEY environment variable.");
 }
-
-import { Logger } from "@/shared/utils/logger";
 
 Logger.info("[db.service] Supabase URL:", supabaseUrl ? "Set" : "Not Set");
 Logger.info("[db.service] Supabase Anon Key:", supabaseAnonKey ? "Set" : "Not Set");
 
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+const supabase = (supabaseUrl && supabaseAnonKey) ? createClient(supabaseUrl, supabaseAnonKey) : null;
 
 export async function saveSubmission(id: string, data: any): Promise<void> {
+  if (!supabase) throw new Error("Supabase client is not initialized. Check environment variables.");
   try {
 Logger.info(`[db.service] Saving submission with ID: ${id}, Data keys: ${Object.keys(data).join(', ')}`);
 
@@ -51,6 +51,7 @@ Logger.info(`[db.service] Saving submission with ID: ${id}, Data keys: ${Object.
 }
 
 export async function getSubmission(id: string): Promise<any | null> {
+  if (!supabase) throw new Error("Supabase client is not initialized. Check environment variables.");
   try {
     const { data: returnedData, error } = await supabase
       .from('submissions')
