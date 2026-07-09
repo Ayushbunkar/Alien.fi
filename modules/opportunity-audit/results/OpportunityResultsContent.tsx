@@ -31,7 +31,7 @@ import { ResultsSkeleton } from "@/modules/cost-audit/results/ResultsSkeleton";
 import { EmailModal } from "@/shared/components/EmailModal";
 import { UnlockModal } from "@/shared/components/UnlockModal";
 import { LockOverlay } from "@/shared/components/LockOverlay";
-import { ValueProjection, InnovationRoadmap, GrowthOpportunities } from "./OpportunityVisualExtensions";
+import { ValueProjection, InnovationRoadmap, GrowthOpportunities, ProposedArchitectureAnalysis } from "./OpportunityVisualExtensions";
 
 // Strips markdown syntax down to plain text (used for the plain-text PDF body).
 const cleanMarkdownForPdf = (md: string) => {
@@ -283,6 +283,7 @@ export default function OpportunityResultsContent() {
              <Fragment>
                <ValueProjection />
                <GrowthOpportunities />
+               <ProposedArchitectureAnalysis />
                <InnovationRoadmap />
              </Fragment>
            )}

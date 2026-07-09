@@ -611,9 +611,9 @@ export function generateBasicTextPdf(data: ReportData): Buffer {
            currentY -= 5;
         }
         currentY -= 20;
-        
-        drawText("Proposed Architecture Analysis", 40, 'F2', 14, 0.06, 0.09, 0.16);
-        currentY -= 15;
+    });
+
+    drawContainer("PROPOSED ARCHITECTURE ANALYSIS", 350, () => {
         const archLines = wrapText("Based on the opportunity audit, we recommend introducing a modern AI stack. This includes an AI Agent layer for orchestration, a Vector Database for semantic search over proprietary data, and a flexible LLM Gateway to avoid vendor lock-in.", 95);
         for (const line of archLines) {
           drawText(line, 40, 'F1', 9, 0.28, 0.33, 0.41);
