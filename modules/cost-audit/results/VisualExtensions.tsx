@@ -119,7 +119,7 @@ export const OptimizationOpportunities = () => {
         </div>
       </div>
       
-      <div className="mb-10">
+      <div className="mb-10 break-inside-avoid" style={{ pageBreakInside: 'avoid', display: 'inline-block', width: '100%' }}>
         <h3 className="text-xl font-bold text-slate-900 mb-4">Quick Wins</h3>
         <ul className="space-y-3 text-sm text-slate-700">
           <li>• Enable native provider Prompt Caching for system prompts exceeding 1,024 tokens.</li>
@@ -129,7 +129,7 @@ export const OptimizationOpportunities = () => {
         </ul>
       </div>
       
-      <div className="pt-8 border-t border-slate-200">
+      <div className="pt-8 border-t border-slate-200 break-inside-avoid" style={{ pageBreakInside: 'avoid', display: 'inline-block', width: '100%' }}>
         <h3 className="text-xl font-bold text-slate-900 mb-2">Current Architecture Analysis</h3>
         <p className="text-xs text-slate-500 mb-8 leading-relaxed">
           Known information from the audit indicates Azure OpenAI as the primary provider, Azure as the cloud layer, and a vector database in the stack. The audit also suggests the current workflow likely sends large system prompts and RAG context without gateway-level optimisation.

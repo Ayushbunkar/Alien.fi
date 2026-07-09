@@ -120,7 +120,7 @@ export const GrowthOpportunities = () => {
         </div>
       </div>
       
-      <div className="mb-10 break-inside-avoid" style={{ pageBreakInside: 'avoid' }}>
+      <div className="mb-10 break-inside-avoid" style={{ pageBreakInside: 'avoid', display: 'inline-block', width: '100%' }}>
         <h3 className="text-xl font-bold text-slate-900 mb-4">Quick Wins</h3>
         <ul className="space-y-3 text-sm text-slate-700">
           <li>• Deploy an internal knowledge base chatbot using a lightweight RAG system.</li>
@@ -130,7 +130,7 @@ export const GrowthOpportunities = () => {
         </ul>
       </div>
       
-      <div className="pt-8 border-t border-slate-200 break-inside-avoid" style={{ pageBreakInside: 'avoid' }}>
+      <div className="pt-8 border-t border-slate-200 break-inside-avoid" style={{ pageBreakInside: 'avoid', display: 'inline-block', width: '100%' }}>
         <h3 className="text-xl font-bold text-slate-900 mb-2">Proposed Architecture Analysis</h3>
         <p className="text-xs text-slate-500 mb-8 leading-relaxed">
           Based on the opportunity audit, we recommend introducing a modern AI stack. This includes an AI Agent layer for orchestration, a Vector Database for semantic search over your proprietary data, and a flexible LLM Gateway to avoid vendor lock-in while scaling.
