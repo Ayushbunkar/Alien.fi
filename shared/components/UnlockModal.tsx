@@ -27,34 +27,34 @@ export function UnlockModal({
           </svg>
         </button>
         <div className="text-center space-y-4">
-          <div className="w-12 h-12 rounded-full bg-blue-50 text-[#96EE52] border border-blue-100 flex items-center justify-center mx-auto shadow-sm">
+          <div className="w-12 h-12 rounded-full bg-[#96EE52]/10 text-[#96EE52] border border-[#96EE52]/30 flex items-center justify-center mx-auto shadow-sm">
             <Lock className="w-6 h-6" />
           </div>
           <div className="space-y-1">
             <h3 className="font-bold text-slate-900 text-lg">Unlock Your Full AI Report</h3>
             <p className="text-slate-500 text-xs">
-              Enter your email below to receive the complete AI Cost Audit report with professional visuals and
+              Enter your email below to receive the complete AI Audit report with professional visuals and
               detailed insights.
             </p>
           </div>
           <div className="space-y-2 text-left bg-slate-50 rounded-lg p-3">
             <div className="flex items-start gap-2 text-xs text-slate-600">
-              <CheckCircle2 className="w-3.5 h-3.5 text-green-500 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#96EE52] flex-shrink-0 mt-0.5" />
               <span>Professional PDF report with visual charts</span>
             </div>
             <div className="flex items-start gap-2 text-xs text-slate-600">
-              <CheckCircle2 className="w-3.5 h-3.5 text-green-500 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#96EE52] flex-shrink-0 mt-0.5" />
               <span>Complete implementation roadmap</span>
             </div>
             <div className="flex items-start gap-2 text-xs text-slate-600">
-              <CheckCircle2 className="w-3.5 h-3.5 text-green-500 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-3.5 h-3.5 text-[#96EE52] flex-shrink-0 mt-0.5" />
               <span>Executive summary for stakeholders</span>
             </div>
           </div>
           <div className="space-y-2">
             <button
               onClick={onEmail}
-              className="w-full px-4 py-2 bg-[#96EE52] hover:bg-[#85DC45] text-white rounded-lg font-bold text-xs transition-colors shadow-sm flex items-center justify-center gap-2"
+              className="w-full px-4 py-2 bg-[#96EE52] hover:bg-[#85DC45] text-[#15182B] rounded-lg font-bold text-xs transition-colors shadow-sm flex items-center justify-center gap-2"
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path

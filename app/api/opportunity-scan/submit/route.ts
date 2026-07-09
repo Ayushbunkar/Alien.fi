@@ -259,9 +259,9 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // Send Telegram notification to team
-    if (telegramChatIdTeam) {
-      const emailDisplay = input.email ? `(<a href="mailto:${input.email}">${input.email}</a>)` : "(No email provided)";
+    // Send Telegram notification to team (only if user provided their email address)
+    if (telegramChatIdTeam && userEmail) {
+      const emailDisplay = `(<a href="mailto:${input.email}">${input.email}</a>)`;
       const nameDisplay = (input.firstname || input.lastname) ? `${input.firstname || ''} ${input.lastname || ''}`.trim() : "Anonymous";
       
       const telegramMessage = `🚨 <b>New Opportunity Scan Submission!</b>
