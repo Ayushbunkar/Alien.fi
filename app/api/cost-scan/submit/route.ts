@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+export const dynamic = 'force-dynamic';
+
 import { randomUUID }                from "crypto";
 import { validateSubmission, castToFormState } from "@/modules/cost-audit/utils/server-validation";
 import { runScoring, getCTAUrl }              from "@/modules/cost-audit/scoring/cost-score-service";
