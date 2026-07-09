@@ -100,7 +100,7 @@ function NavButtons({ step, total, loading, onBack, onNext }: NavProps) {
             type="button"
             onClick={onNext}
             disabled={loading}
-            className="px-6 py-2.5 bg-[#0d6efd] text-white rounded-lg hover:bg-blue-700 transition-colors min-w-[200px] flex items-center justify-center gap-2 text-sm font-semibold"
+            className="px-6 py-2.5 bg-[#96EE52] text-[#15182B] rounded-lg hover:bg-[#85DC45] transition-colors min-w-[200px] flex items-center justify-center gap-2 text-sm font-semibold"
             aria-label="Submit and get your AI Opportunity Roadmap"
           >
             {loading ? (
@@ -233,7 +233,7 @@ export function OpportunityWizard({ initialRef }: OpportunityWizardProps) {
   if (!isLoaded) {
     return (
       <div className="flex items-center justify-center py-24">
-        <Loader2 className="w-8 h-8 text-blue-600 animate-spin" />
+        <Loader2 className="w-8 h-8 text-[#96EE52] animate-spin" />
       </div>
     );
   }

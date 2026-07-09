@@ -281,7 +281,7 @@ export default function ResultsPageContent() {
 
            <button
              onClick={() => setEmailModalOpen(true)}
-             className="inline-flex items-center justify-center px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold text-xs transition-all duration-200 shadow-sm gap-2 h-9 min-w-[150px]"
+             className="inline-flex items-center justify-center px-5 py-2 bg-[#96EE52] hover:bg-[#85DC45] text-white rounded-lg font-bold text-xs transition-all duration-200 shadow-sm gap-2 h-9 min-w-[150px]"
            >
              <Cpu className="w-3.5 h-3.5" />
              Email Audit Report
@@ -298,7 +298,7 @@ export default function ResultsPageContent() {
          <div className="fixed bottom-6 right-6 z-50">
            <button
              onClick={() => triggerPdfDownload(result.submissionId, result)}
-             className="px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl flex items-center gap-2"
+             className="px-4 py-3 bg-[#96EE52] hover:bg-[#85DC45] text-white rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl flex items-center gap-2"
              title="Download PDF Report"
            >
              <Download className="w-5 h-5" />

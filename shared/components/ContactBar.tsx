@@ -30,18 +30,18 @@ export function ContactBar({ className = "", containerClassName = "" }: ContactB
   };
 
   return (
-    <div className={`bg-[#0d6efd] text-white text-xs py-2 px-6 ${className}`}>
+    <div className={`bg-[#96EE52] text-[#15182B] text-xs py-2 px-6 ${className}`}>
       <div className={`mx-auto flex flex-wrap items-center justify-center gap-4 sm:gap-6 ${containerClassName}`}>
         <a 
           href="tel:+16572001336" 
-          className="flex items-center gap-1.5 hover:text-blue-200 transition-colors"
+          className="flex items-center gap-1.5 hover:opacity-70 transition-opacity"
         >
           <Phone className="w-3.5 h-3.5" /> +1 (657) 200-1336
         </a>
         <a 
           href="mailto:contact@alien.fi" 
           onClick={handleEmailClick}
-          className="flex items-center gap-1.5 hover:text-blue-200 transition-colors cursor-pointer"
+          className="flex items-center gap-1.5 hover:opacity-70 transition-opacity cursor-pointer"
         >
           <Mail className="w-3.5 h-3.5" /> contact@alien.fi
         </a>
@@ -49,7 +49,7 @@ export function ContactBar({ className = "", containerClassName = "" }: ContactB
           href="https://wa.me/16572001336" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="flex items-center gap-1.5 hover:text-blue-200 transition-colors"
+          className="flex items-center gap-1.5 hover:opacity-70 transition-opacity"
         >
           <svg 
             xmlns="http://www.w3.org/2000/svg" 

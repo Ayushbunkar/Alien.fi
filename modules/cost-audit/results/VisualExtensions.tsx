@@ -103,7 +103,7 @@ export const OptimizationOpportunities = () => {
       <p className="text-sm text-slate-600 mb-6">These are the highest-leverage moves based on the audit pattern. The goal is to reduce token waste without changing the product experience.</p>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-        <div className="border-2 border-blue-500 bg-blue-50/30 rounded-lg p-5">
+        <div className="border-2 border-[#96EE52] bg-blue-50/30 rounded-lg p-5">
           <h3 className="font-bold text-slate-900 mb-3 text-sm">Prompt Caching</h3>
           <p className="text-xs text-slate-600">Activate cache headers on all system instructions over 1k tokens. This can cut repeated input cost significantly.</p>
         </div>

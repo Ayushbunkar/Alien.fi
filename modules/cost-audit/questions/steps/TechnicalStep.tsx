@@ -198,7 +198,7 @@ export function TechnicalStep({
     <div className="step-enter max-w-2xl mx-auto">
       <div className="text-center mb-6">
         <h2 className="text-2xl font-bold text-slate-900 mb-2 flex items-center justify-center gap-2">
-          <Sparkles className="w-5 h-5 text-blue-600 animate-pulse" />
+          <Sparkles className="w-5 h-5 text-[#96EE52] animate-pulse" />
           Technical Infrastructure Audit
           <span className="text-xs font-semibold px-2 py-0.5 bg-slate-100 border border-slate-200 text-slate-500 rounded-full">
             Optional
@@ -216,7 +216,7 @@ export function TechnicalStep({
           onClick={() => setActiveTab("stack")}
           className={`flex-1 pb-3 text-sm font-semibold border-b-2 transition-all flex items-center justify-center gap-2 ${
             activeTab === "stack"
-              ? "border-blue-600 text-blue-600"
+              ? "border-[#96EE52] text-[#96EE52]"
               : "border-transparent text-slate-500 hover:text-slate-900"
           }`}
         >
@@ -227,7 +227,7 @@ export function TechnicalStep({
           onClick={() => setActiveTab("architecture")}
           className={`flex-1 pb-3 text-sm font-semibold border-b-2 transition-all flex items-center justify-center gap-2 ${
             activeTab === "architecture"
-              ? "border-blue-600 text-blue-600"
+              ? "border-[#96EE52] text-[#96EE52]"
               : "border-transparent text-slate-500 hover:text-slate-900"
           }`}
         >
@@ -238,7 +238,7 @@ export function TechnicalStep({
           onClick={() => setActiveTab("billing")}
           className={`flex-1 pb-3 text-sm font-semibold border-b-2 transition-all flex items-center justify-center gap-2 ${
             activeTab === "billing"
-              ? "border-blue-600 text-blue-600"
+              ? "border-[#96EE52] text-[#96EE52]"
               : "border-transparent text-slate-500 hover:text-slate-900"
           }`}
         >
@@ -253,7 +253,7 @@ export function TechnicalStep({
             {/* Website URL */}
             <div>
               <label htmlFor="website_url" className="block text-sm font-semibold text-slate-900 mb-1.5 flex items-center gap-1.5">
-                <Globe className="w-4 h-4 text-blue-600" /> Website URL
+                <Globe className="w-4 h-4 text-[#96EE52]" /> Website URL
               </label>
               <input
                 id="website_url"
@@ -274,7 +274,7 @@ export function TechnicalStep({
               {/* Providers */}
               <div>
                 <label className="block text-sm font-semibold text-slate-900 mb-2 flex items-center gap-1.5">
-                  <Cpu className="w-4 h-4 text-blue-600" /> AI Providers
+                  <Cpu className="w-4 h-4 text-[#96EE52]" /> AI Providers
                 </label>
                 <div className="flex flex-wrap gap-1.5">
                   {PROVIDERS.map((provider) => {
@@ -286,7 +286,7 @@ export function TechnicalStep({
                         onClick={() => toggleProvider(provider)}
                         className={`px-2.5 py-1.5 rounded-lg border text-xs font-medium transition-all ${
                           selected
-                            ? "bg-blue-600 text-white border-blue-600 shadow-sm"
+                            ? "bg-[#96EE52] text-[#15182B] border-[#96EE52] shadow-sm"
                             : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50"
                         }`}
                       >
@@ -300,7 +300,7 @@ export function TechnicalStep({
               {/* Infrastructure */}
               <div>
                 <label className="block text-sm font-semibold text-slate-900 mb-2 flex items-center gap-1.5">
-                  <Layers className="w-4 h-4 text-blue-600" /> Cloud/Infra Hosting
+                  <Layers className="w-4 h-4 text-[#96EE52]" /> Cloud/Infra Hosting
                 </label>
                 <div className="flex flex-wrap gap-1.5">
                   {INFRASTRUCTURE.map((infra) => {
@@ -312,7 +312,7 @@ export function TechnicalStep({
                         onClick={() => toggleInfra(infra)}
                         className={`px-2.5 py-1.5 rounded-lg border text-xs font-medium transition-all ${
                           selected
-                            ? "bg-blue-600 text-white border-blue-600 shadow-sm"
+                            ? "bg-[#96EE52] text-[#15182B] border-[#96EE52] shadow-sm"
                             : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50"
                         }`}
                       >
@@ -328,7 +328,7 @@ export function TechnicalStep({
               {/* Models */}
               <div>
                 <label htmlFor="ai_models" className="block text-sm font-semibold text-slate-900 mb-1.5 flex items-center gap-1.5">
-                  <Sparkles className="w-4 h-4 text-blue-600" /> AI Models Used
+                  <Sparkles className="w-4 h-4 text-[#96EE52]" /> AI Models Used
                 </label>
                 <input
                   id="ai_models"
@@ -343,7 +343,7 @@ export function TechnicalStep({
               {/* Capabilities */}
               <div>
                 <label className="block text-sm font-semibold text-slate-900 mb-2 flex items-center gap-1.5">
-                  <Cpu className="w-4 h-4 text-blue-600" /> Tech Capabilities
+                  <Cpu className="w-4 h-4 text-[#96EE52]" /> Tech Capabilities
                 </label>
                 <div className="flex flex-wrap gap-1.5">
                   {OTHER_CAPABILITIES.map((cap) => {
@@ -355,7 +355,7 @@ export function TechnicalStep({
                         onClick={() => toggleOther(cap)}
                         className={`px-2.5 py-1.5 rounded-lg border text-xs font-medium transition-all ${
                           selected
-                            ? "bg-blue-600 text-white border-blue-600 shadow-sm"
+                            ? "bg-[#96EE52] text-[#15182B] border-[#96EE52] shadow-sm"
                             : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50"
                         }`}
                       >
@@ -378,7 +378,7 @@ export function TechnicalStep({
                 value={state.technical_notes}
                 onChange={(e) => onChange("technical_notes", e.target.value)}
                 placeholder="Add details about your architecture, scaling thresholds, data flows, or current token leakage areas..."
-                className="w-full px-4 py-3 rounded-xl text-slate-900 text-sm outline-none border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 bg-white placeholder:text-slate-400 transition-all resize-none"
+                className="w-full px-4 py-3 rounded-xl text-slate-900 text-sm outline-none border border-slate-300 focus:border-[#96EE52] focus:ring-2 focus:ring-blue-100 bg-white placeholder:text-slate-400 transition-all resize-none"
               />
             </div>
           </div>
@@ -390,7 +390,7 @@ export function TechnicalStep({
             {/* Architecture diagram drag/drop */}
             <div>
               <label className="block text-sm font-semibold text-slate-900 mb-2 flex items-center gap-1.5">
-                <ImageIcon className="w-4 h-4 text-blue-600" /> AI Architecture Diagram
+                <ImageIcon className="w-4 h-4 text-[#96EE52]" /> AI Architecture Diagram
               </label>
               <div
                 onDragOver={(e) => { e.preventDefault(); setDragOverArch(true); }}
@@ -405,8 +405,8 @@ export function TechnicalStep({
                 onClick={() => archInputRef.current?.click()}
                 className={`border-2 border-dashed rounded-xl p-5 text-center cursor-pointer transition-all ${
                   dragOverArch
-                    ? "border-blue-600 bg-blue-50/50"
-                    : "border-slate-300 hover:border-blue-600 hover:bg-slate-50/50"
+                    ? "border-[#96EE52] bg-blue-50/50"
+                    : "border-slate-300 hover:border-[#96EE52] hover:bg-slate-50/50"
                 }`}
               >
                 <input
@@ -417,9 +417,9 @@ export function TechnicalStep({
                   accept=".png,.jpg,.jpeg,.pdf,.drawio,.xml,.doc,.docx"
                   className="hidden"
                 />
-                <UploadCloud className="w-7 h-7 text-blue-600 mx-auto mb-1.5" />
+                <UploadCloud className="w-7 h-7 text-[#96EE52] mx-auto mb-1.5" />
                 <p className="text-xs font-semibold text-slate-900">
-                  Drag & drop your architecture diagram here, or <span className="text-blue-600">browse</span>
+                  Drag & drop your architecture diagram here, or <span className="text-[#96EE52]">browse</span>
                 </p>
                 <p className="text-[10px] text-slate-500 mt-1">
                   Supports PNG, JPG, Draw.io, XML, PDF, Word (max 10MB)
@@ -433,7 +433,7 @@ export function TechnicalStep({
                     return (
                       <div key={idx} className="flex items-center justify-between p-2.5 border border-slate-100 rounded-lg bg-slate-50/50 text-xs">
                         <div className="flex items-center gap-2 min-w-0">
-                          <FileText className="w-5 h-5 text-blue-500 flex-shrink-0" />
+                          <FileText className="w-5 h-5 text-[#96EE52] flex-shrink-0" />
                           <div className="min-w-0">
                             <p className="font-semibold text-slate-700 truncate">{file.name}</p>
                             <p className="text-[10px] text-slate-400">{(file.size / 1024).toFixed(1)} KB</p>
@@ -456,7 +456,7 @@ export function TechnicalStep({
             {/* Standard documents drag/drop */}
             <div>
               <label className="block text-sm font-semibold text-slate-900 mb-2 flex items-center gap-1.5">
-                <FileText className="w-4 h-4 text-blue-600" /> Technical Documentation
+                <FileText className="w-4 h-4 text-[#96EE52]" /> Technical Documentation
               </label>
               <div
                 onDragOver={(e) => { e.preventDefault(); setDragOverDoc(true); }}
@@ -471,8 +471,8 @@ export function TechnicalStep({
                 onClick={() => docInputRef.current?.click()}
                 className={`border-2 border-dashed rounded-xl p-5 text-center cursor-pointer transition-all ${
                   dragOverDoc
-                    ? "border-blue-600 bg-blue-50/50"
-                    : "border-slate-300 hover:border-blue-600 hover:bg-slate-50/50"
+                    ? "border-[#96EE52] bg-blue-50/50"
+                    : "border-slate-300 hover:border-[#96EE52] hover:bg-slate-50/50"
                 }`}
               >
                 <input
@@ -483,9 +483,9 @@ export function TechnicalStep({
                   accept=".md,.pdf,.txt,.doc,.docx"
                   className="hidden"
                 />
-                <UploadCloud className="w-7 h-7 text-blue-600 mx-auto mb-1.5" />
+                <UploadCloud className="w-7 h-7 text-[#96EE52] mx-auto mb-1.5" />
                 <p className="text-xs font-semibold text-slate-900">
-                  Drag & drop text docs or PDF specs here, or <span className="text-blue-600">browse</span>
+                  Drag & drop text docs or PDF specs here, or <span className="text-[#96EE52]">browse</span>
                 </p>
                 <p className="text-[10px] text-slate-500 mt-1">
                   Supports MD, PDF, TXT, DOCX text resources (max 10MB)
@@ -498,7 +498,7 @@ export function TechnicalStep({
                   {state.documents.map((file, idx) => (
                     <div key={idx} className="flex items-center justify-between p-2.5 border border-slate-100 rounded-lg bg-slate-50/50 text-xs">
                       <div className="flex items-center gap-2 min-w-0">
-                        <FileText className="w-5 h-5 text-blue-500 flex-shrink-0" />
+                        <FileText className="w-5 h-5 text-[#96EE52] flex-shrink-0" />
                         <div className="min-w-0">
                           <p className="font-semibold text-slate-700 truncate">{file.name}</p>
                           <p className="text-[10px] text-slate-400">{(file.size / 1024).toFixed(1)} KB</p>
@@ -525,7 +525,7 @@ export function TechnicalStep({
             {/* Cost Evidence drop box */}
             <div>
               <label className="block text-sm font-semibold text-slate-900 mb-2 flex items-center gap-1.5">
-                <FileSpreadsheet className="w-4 h-4 text-blue-600" /> Cost Evidence & Billing Reports
+                <FileSpreadsheet className="w-4 h-4 text-[#96EE52]" /> Cost Evidence & Billing Reports
               </label>
               <div
                 onDragOver={(e) => { e.preventDefault(); setDragOverCost(true); }}
@@ -540,8 +540,8 @@ export function TechnicalStep({
                 onClick={() => costInputRef.current?.click()}
                 className={`border-2 border-dashed rounded-xl p-5 text-center cursor-pointer transition-all ${
                   dragOverCost
-                    ? "border-blue-600 bg-blue-50/50"
-                    : "border-slate-300 hover:border-blue-600 hover:bg-slate-50/50"
+                    ? "border-[#96EE52] bg-blue-50/50"
+                    : "border-slate-300 hover:border-[#96EE52] hover:bg-slate-50/50"
                 }`}
               >
                 <input
@@ -552,9 +552,9 @@ export function TechnicalStep({
                   accept=".csv,.xlsx,.xls,.pdf,.png,.jpg,.jpeg"
                   className="hidden"
                 />
-                <UploadCloud className="w-7 h-7 text-blue-600 mx-auto mb-1.5" />
+                <UploadCloud className="w-7 h-7 text-[#96EE52] mx-auto mb-1.5" />
                 <p className="text-xs font-semibold text-slate-900">
-                  Drag & drop invoices, CSVs, or cost screenshots here, or <span className="text-blue-600">browse</span>
+                  Drag & drop invoices, CSVs, or cost screenshots here, or <span className="text-[#96EE52]">browse</span>
                 </p>
                 <p className="text-[10px] text-slate-500 mt-1">
                   Supports CSV, XLSX, XLS, PDF, PNG/JPG invoice screenshots (max 10MB)
@@ -567,7 +567,7 @@ export function TechnicalStep({
                   {state.cost_files.map((file, idx) => (
                     <div key={idx} className="flex items-center justify-between p-2.5 border border-slate-100 rounded-lg bg-slate-50/50 text-xs">
                       <div className="flex items-center gap-2 min-w-0">
-                        <FileSpreadsheet className="w-5 h-5 text-blue-500 flex-shrink-0" />
+                        <FileSpreadsheet className="w-5 h-5 text-[#96EE52] flex-shrink-0" />
                         <div className="min-w-0">
                           <p className="font-semibold text-slate-700 truncate">{file.name}</p>
                           <p className="text-[10px] text-slate-400">{(file.size / 1024).toFixed(1)} KB</p>
@@ -589,7 +589,7 @@ export function TechnicalStep({
             {/* Usage Metrics fields */}
             <div>
               <h3 className="text-sm font-semibold text-slate-900 mb-3 flex items-center gap-1.5 border-b pb-1.5">
-                <Activity className="w-4 h-4 text-blue-600" /> Operational Usage Metrics
+                <Activity className="w-4 h-4 text-[#96EE52]" /> Operational Usage Metrics
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Requests */}

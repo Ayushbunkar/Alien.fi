@@ -2,7 +2,7 @@ export function ResultsSkeleton() {
   return (
     <div className="min-h-screen bg-[#eef4ff] flex items-center justify-center">
       <div className="text-center w-full max-w-3xl px-4 animate-pulse">
-        <div className="w-10 h-10 rounded-full border-2 border-blue-500 border-t-transparent animate-spin mx-auto mb-4" />
+        <div className="w-10 h-10 rounded-full border-2 border-[#96EE52] border-t-transparent animate-spin mx-auto mb-4" />
         <p className="text-slate-600 text-sm mb-12">Loading your results…</p>
         
         {/* Header placeholder */}

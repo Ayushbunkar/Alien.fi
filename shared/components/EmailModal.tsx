@@ -112,14 +112,14 @@ export function EmailModal({ isOpen, onClose, submissionId, scanType, onSuccess,
               <p className="text-slate-500 text-sm">
                 We've emailed the full audit report to <strong className="text-slate-700">{email}</strong>.
                 <br /><br />
-                <span className="text-blue-600 font-medium">Click the link in the email to view and download your report.</span>
+                <span className="text-[#96EE52] font-medium">Click the link in the email to view and download your report.</span>
               </p>
             </div>
           </div>
         ) : (
           <div className="space-y-6">
             <div className="flex gap-4 items-start">
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 flex items-center justify-center shadow-sm flex-shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#96EE52] border border-blue-100 flex items-center justify-center shadow-sm flex-shrink-0">
                 <Mail className="w-6 h-6" />
               </div>
               <div className="space-y-1">
@@ -127,7 +127,7 @@ export function EmailModal({ isOpen, onClose, submissionId, scanType, onSuccess,
                 <p className="text-slate-500 text-xs leading-relaxed">
                   Enter your email address below to receive the complete customized {scanType === "cost" ? "Cost Audit" : "Opportunity Roadmap"} report directly in your inbox.
                   <br /><br />
-                  <span className="text-blue-600 font-medium">Click the link in the email to view and download your report.</span>
+                  <span className="text-[#96EE52] font-medium">Click the link in the email to view and download your report.</span>
                 </p>
               </div>
             </div>
@@ -144,7 +144,7 @@ export function EmailModal({ isOpen, onClose, submissionId, scanType, onSuccess,
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@company.com"
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all shadow-sm"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:border-[#96EE52] focus:ring-1 focus:ring-blue-500 transition-all shadow-sm"
                 />
               </div>
 
@@ -159,7 +159,7 @@ export function EmailModal({ isOpen, onClose, submissionId, scanType, onSuccess,
                 <button
                   type="submit"
                   disabled={loading || !email.trim() || !email.includes("@")}
-                  className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 disabled:bg-slate-250 text-white rounded-lg font-bold text-sm flex items-center gap-1.5 transition-colors shadow-sm disabled:cursor-not-allowed"
+                  className="px-5 py-2.5 bg-[#96EE52] hover:bg-[#85DC45] disabled:bg-slate-250 text-white rounded-lg font-bold text-sm flex items-center gap-1.5 transition-colors shadow-sm disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <>

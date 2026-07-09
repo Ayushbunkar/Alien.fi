@@ -90,7 +90,7 @@ export default function ResultPage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-[#fafbff] flex flex-col items-center justify-center p-6">
-        <div className="w-10 h-10 rounded-full border-4 border-blue-600 border-t-transparent animate-spin mb-3" />
+        <div className="w-10 h-10 rounded-full border-4 border-[#96EE52] border-t-transparent animate-spin mb-3" />
         <p className="text-xs font-semibold text-slate-600 animate-pulse">Loading AI Audit Result...</p>
       </div>
     );

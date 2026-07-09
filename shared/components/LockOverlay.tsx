@@ -16,7 +16,7 @@ export function LockOverlay({
   return (
     <div className="absolute inset-0 bg-white/80 backdrop-blur-[2px] flex flex-col items-center justify-center p-4 text-center rounded-lg border border-slate-200/50 shadow-inner bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px]">
       <div className="bg-white p-6 rounded-xl border border-slate-200/80 shadow-md max-w-sm flex flex-col items-center space-y-4">
-        <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100 text-blue-600">
+        <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100 text-[#96EE52]">
           <Lock className="w-5 h-5" />
         </div>
         <div>
@@ -27,7 +27,7 @@ export function LockOverlay({
         </div>
         <button
           onClick={onUnlock}
-          className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold text-xs transition-colors shadow-sm flex items-center justify-center gap-1.5"
+          className="w-full py-2 bg-[#96EE52] hover:bg-[#85DC45] text-white rounded-lg font-bold text-xs transition-colors shadow-sm flex items-center justify-center gap-1.5"
         >
           <Unlock className="w-3.5 h-3.5" />
           {buttonText}

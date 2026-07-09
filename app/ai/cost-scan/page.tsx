@@ -57,7 +57,7 @@ export default function AiCostScanPage() {
 
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-4">
             See where your AI spend{" "}
-            <span className="bg-clip-text text-transparent bg-accent-gradient">
+            <span className="text-[#96EE52]">
               is leaking
             </span>
             <br className="hidden md:block" />in 3 minutes
@@ -77,7 +77,7 @@ export default function AiCostScanPage() {
               { icon: <ClipboardList className="w-4 h-4" />, text: "Clear next-step recommendation" },
             ].map(({ icon, text }) => (
               <span key={text} className="flex items-center gap-2">
-                <span className="text-blue-600 flex items-center justify-center">{icon}</span>
+                <span className="text-[#96EE52] flex items-center justify-center">{icon}</span>
                 {text}
               </span>
             ))}

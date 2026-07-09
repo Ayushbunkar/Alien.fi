@@ -78,16 +78,17 @@ export function generateBasicTextPdf(data: ReportData): Buffer {
     currentPage.shapes.push(`0.90 0.94 1.0 rg\n${roundedRectPath(300, 450, 350, 350, 175)} f`); // Large circle
     currentPage.shapes.push(`0.82 0.89 0.99 rg\n${roundedRectPath(450, 350, 200, 200, 100)} f`); // Small circle
     
-    currentPage.shapes.push(`0.05 0.43 0.99 rg\n0 790 595.28 52 re f`); 
+    // Background header bar in #96EE52 (R:0.59, G:0.93, B:0.32)
+    currentPage.shapes.push(`0.59 0.93 0.32 rg\n0 790 595.28 52 re f`); 
     
     if (logoBuffer) {
       currentPage.shapes.push(`q 73 0 0 32 30 800 cm /Im1 Do Q`);
     } else {
-      currentPage.textLines.push({ text: "Alien", x: 30, y: 810, font: 'F2', size: 18, r: 1, g: 1, b: 1 });
+      currentPage.textLines.push({ text: "Alien", x: 30, y: 810, font: 'F2', size: 18, r: 0.08, g: 0.09, b: 0.17 });
     }
     
     const subtitle = data.reportType === "cost" ? "AI COST AUDIT REPORT" : "AI OPPORTUNITY AUDIT REPORT";
-    currentPage.textLines.push({ text: subtitle, x: 400, y: 812, font: 'F2', size: 10, r: 0.9, g: 0.9, b: 0.9 });
+    currentPage.textLines.push({ text: subtitle, x: 400, y: 812, font: 'F2', size: 10, r: 0.08, g: 0.09, b: 0.17 });
   };
   
   addPage();

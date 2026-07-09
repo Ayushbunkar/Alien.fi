@@ -14,7 +14,7 @@ export default function ResultsPage() {
     <Suspense
       fallback={
         <div className="min-h-screen bg-[#eef4ff] flex items-center justify-center">
-          <div className="w-10 h-10 rounded-full border-2 border-blue-500 border-t-transparent animate-spin" />
+          <div className="w-10 h-10 rounded-full border-2 border-[#96EE52] border-t-transparent animate-spin" />
         </div>
       }
     >

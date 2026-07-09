@@ -27,7 +27,7 @@ function InputField({
   return (
     <div>
       <label htmlFor={id} className="block text-sm font-semibold text-slate-900 mb-1.5">
-        {label}{required && <span className="text-blue-600 ml-0.5">*</span>}
+        {label}{required && <span className="text-[#96EE52] ml-0.5">*</span>}
       </label>
       <input
         id={id}

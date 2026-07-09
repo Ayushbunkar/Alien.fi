@@ -27,7 +27,7 @@ export function UnlockModal({
           </svg>
         </button>
         <div className="text-center space-y-4">
-          <div className="w-12 h-12 rounded-full bg-blue-50 text-blue-600 border border-blue-100 flex items-center justify-center mx-auto shadow-sm">
+          <div className="w-12 h-12 rounded-full bg-blue-50 text-[#96EE52] border border-blue-100 flex items-center justify-center mx-auto shadow-sm">
             <Lock className="w-6 h-6" />
           </div>
           <div className="space-y-1">
@@ -54,7 +54,7 @@ export function UnlockModal({
           <div className="space-y-2">
             <button
               onClick={onEmail}
-              className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold text-xs transition-colors shadow-sm flex items-center justify-center gap-2"
+              className="w-full px-4 py-2 bg-[#96EE52] hover:bg-[#85DC45] text-white rounded-lg font-bold text-xs transition-colors shadow-sm flex items-center justify-center gap-2"
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path

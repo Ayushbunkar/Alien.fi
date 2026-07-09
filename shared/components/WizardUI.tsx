@@ -36,8 +36,8 @@ export function OptionCard({
         className={`mt-0.5 flex-shrink-0 w-5 h-5 rounded-${multi ? "md" : "full"} border-2 flex items-center justify-center transition-all duration-150
           ${selected
             ? multi
-              ? "border-blue-600 bg-blue-600"
-              : "border-blue-600 bg-blue-600"
+              ? "border-[#96EE52] bg-[#96EE52]"
+              : "border-[#96EE52] bg-[#96EE52]"
             : "border-slate-300"
           }`}
       >
@@ -52,7 +52,7 @@ export function OptionCard({
       <div className="flex-1">
         <span className="flex items-center gap-2">
           {icon && <span className="text-lg">{icon}</span>}
-          <span className={`text-sm font-semibold transition-colors ${multi && selected ? 'text-white' : 'text-slate-900 group-hover:text-blue-600'}`}>{label}</span>
+          <span className={`text-sm font-semibold transition-colors ${multi && selected ? 'text-white' : 'text-slate-900 group-hover:text-[#96EE52]'}`}>{label}</span>
         </span>
         {sublabel && (
           <p className={`mt-1 text-xs ml-7 leading-relaxed ${multi && selected ? 'text-slate-200' : 'text-slate-600'}`}>

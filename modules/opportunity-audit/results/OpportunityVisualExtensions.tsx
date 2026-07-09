@@ -104,7 +104,7 @@ export const GrowthOpportunities = () => {
       <p className="text-sm text-slate-600 mb-6">These are the highest-leverage areas to inject AI into your business model based on the audit pattern. The goal is to create new value and competitive advantages.</p>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-        <div className="border-2 border-blue-500 bg-blue-50/30 rounded-lg p-5">
+        <div className="border-2 border-[#96EE52] bg-blue-50/30 rounded-lg p-5">
           <h3 className="font-bold text-slate-900 mb-3 text-sm">Workflow Automation</h3>
           <p className="text-xs text-slate-600">Deploy AI agents to automate repetitive data entry and customer support triage, freeing up human capital for strategic work.</p>
         </div>
