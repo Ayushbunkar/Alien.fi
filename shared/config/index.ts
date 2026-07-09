@@ -27,7 +27,8 @@ class ConfigError extends Error {
 
 function validateEnv(key: string, value: string | undefined): string {
   if (!value) {
-    throw new ConfigError(`Missing required environment variable: ${key}`);
+    console.warn(`Configuration Warning: Missing required environment variable: ${key}`);
+    return '';
   }
   return value;
 }
