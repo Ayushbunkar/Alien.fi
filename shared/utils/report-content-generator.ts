@@ -353,7 +353,7 @@ export function renderReportToHtml(report: ReportData, options: { mode: "web" | 
   }
 
   // ── CSS & HTML Construction
-  return \`<!DOCTYPE html>
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
