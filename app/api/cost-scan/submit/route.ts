@@ -392,17 +392,20 @@ export async function POST(req: NextRequest) {
 
     const baseUrl = getBaseUrl(req);
 
-    // Send Telegram notification to team (only if user provided their email address)
-    if (telegramChatIdTeam && userEmail) {
+    // Send Telegram notification to team
+    if (telegramChatIdTeam) {
       const isOpportunity = body.scanType === "opportunity";
       const reportName = isOpportunity ? "Opportunity Scan" : "Cost Scan";
       const reportPath = isOpportunity ? `result/opportunity?id=${submissionId}&unlock=true` : `ai/cost-scan/results?id=${submissionId}&unlock=true`;
+
+      const emailDisplay = userEmail ? `(<a href="mailto:${userEmail}">${userEmail}</a>)` : "(No email provided)";
+      const nameDisplay = (castedInput.firstname || castedInput.lastname) ? `${castedInput.firstname || ''} ${castedInput.lastname || ''}`.trim() : "Anonymous";
 
       const telegramMessage = `🚨 <b>New ${reportName} Submission!</b>
  
 <b>Submission ID:</b> <code>${submissionId}</code>
 <b>Company:</b> ${castedInput.company || "N/A"}
-<b>Contact:</b> ${castedInput.firstname || ""} ${castedInput.lastname || ""} (<a href="mailto:${userEmail}">${userEmail}</a>)
+<b>Contact:</b> ${nameDisplay} ${emailDisplay}
 <b>Tier:</b> ${scores.tier}
  
 <a href="${baseUrl}/${reportPath}">➡️ View Full Technical Audit Report</a>`;
