@@ -129,7 +129,11 @@ export const OptimizationOpportunities = () => {
         </ul>
       </div>
       
-      <div className="pt-8 border-t border-slate-200 break-inside-avoid" style={{ pageBreakInside: 'avoid', display: 'inline-block', width: '100%' }}>
+      <table style={{ width: '100%', pageBreakInside: 'avoid', borderCollapse: 'collapse', marginTop: '32px', borderTop: '1px solid #e2e8f0' }}>
+        <tbody>
+          <tr>
+            <td style={{ padding: 0 }}>
+              <div className="pt-8">
         <h3 className="text-xl font-bold text-slate-900 mb-2">Current Architecture Analysis</h3>
         <p className="text-xs text-slate-500 mb-8 leading-relaxed">
           Known information from the audit indicates Azure OpenAI as the primary provider, Azure as the cloud layer, and a vector database in the stack. The audit also suggests the current workflow likely sends large system prompts and RAG context without gateway-level optimisation.
@@ -188,8 +192,13 @@ export const OptimizationOpportunities = () => {
             </div>
           </div>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-slate-200 rounded-lg overflow-hidden text-sm">
+                </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-0 border border-slate-200 rounded-lg overflow-hidden text-sm">
           <div className="p-4 bg-slate-50 border-b md:border-b-0 md:border-r border-slate-200 font-bold text-slate-800">
             Observed Risks
           </div>
