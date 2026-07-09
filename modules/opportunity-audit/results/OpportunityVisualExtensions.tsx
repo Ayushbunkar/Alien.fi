@@ -217,7 +217,6 @@ export const ProposedArchitectureAnalysis = () => {
             </div>
           </div>
         </div>
-        </div>
         
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-0 border border-slate-200 rounded-lg overflow-hidden text-sm">
           <div className="p-4 bg-slate-50 border-b md:border-b-0 md:border-r border-slate-200 font-bold text-slate-800">
