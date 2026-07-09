@@ -129,7 +129,7 @@ export const PdfReportTemplate: React.FC<Props> = ({ result }) => {
       {/* ── PAGE 1: DIAGNOSTIC SCORECARD ────────────────────────────────────────── */}
       <div style={{ width: "794px", minHeight: "1060px", boxSizing: "border-box", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "30px 0", pageBreakAfter: "always" }}>
         <div style={{ width: "720px", backgroundColor: "#ffffff", borderRadius: "16px", border: "1px solid #e2e8f0", boxShadow: "0 4px 32px rgba(0,0,0,0.07)", overflow: "hidden", display: "flex", flexDirection: "column" }}>
-          <div style={{ height: "5px", background: "linear-gradient(90deg, #0d6efd 0%, #6610f2 100%)" }} />
+          <div style={{ height: "5px", background: "#96EE52" }} />
           <div style={{ padding: "28px 32px 24px 32px", display: "flex", flexDirection: "column", gap: "16px" }}>
             
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -299,7 +299,7 @@ export const PdfReportTemplate: React.FC<Props> = ({ result }) => {
       {result.auditReport && (
         <div style={{ width: "794px", minHeight: "1060px", boxSizing: "border-box", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-start", padding: "30px 0" }}>
           <div style={{ width: "720px", backgroundColor: "#ffffff", borderRadius: "16px", border: "1px solid #e2e8f0", boxShadow: "0 4px 32px rgba(0,0,0,0.07)", overflow: "hidden", display: "flex", flexDirection: "column" }}>
-            <div style={{ height: "5px", background: "linear-gradient(90deg, #0d6efd 0%, #6610f2 100%)" }} />
+            <div style={{ height: "5px", background: "#96EE52" }} />
             <div style={{ padding: "28px 30px 24px 30px", display: "flex", flexDirection: "column", gap: "16px" }}>
               
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>

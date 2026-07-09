@@ -228,7 +228,7 @@ export const PdfReportTemplate: React.FC<Props> = ({ data, reportType = "cost" }
     >
       <div style={PAGE_STYLE}>
         <div style={{ ...CARD_STYLE, ...avoidBreakStyle }}>
-          <div style={{ height: "5px", borderRadius: "999px", marginBottom: "14px", background: "linear-gradient(90deg,#312e81 0%,#4f46e5 50%,#7c3aed 100%)" }} />
+          <div style={{ height: "5px", borderRadius: "999px", marginBottom: "14px", background: "#96EE52" }} />
 
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "12px", marginBottom: "14px" }}>
             <div>
@@ -326,7 +326,7 @@ export const PdfReportTemplate: React.FC<Props> = ({ data, reportType = "cost" }
 
       <div style={{ ...PAGE_STYLE, pageBreakAfter: "auto" }}>
         <div style={CARD_STYLE}>
-          <div style={{ height: "5px", borderRadius: "999px", marginBottom: "14px", background: "linear-gradient(90deg,#312e81 0%,#4f46e5 50%,#7c3aed 100%)" }} />
+          <div style={{ height: "5px", borderRadius: "999px", marginBottom: "14px", background: "#96EE52" }} />
           <h2 style={{ ...avoidBreakStyle, margin: "0 0 10px", fontSize: "16px", fontWeight: 800, color: "#0f172a" }}>Full Audit Report</h2>
 
           <div style={{ ...allowBreakStyle, border: "1px solid #e2e8f0", borderRadius: "10px", backgroundColor: "#fafafa", padding: "14px" }}>

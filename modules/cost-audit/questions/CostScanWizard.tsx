@@ -44,9 +44,9 @@ function ProgressBar({ step, total }: { step: number; total: number }) {
         </span>
         <span className="text-xs text-slate-400">{STEP_LABELS[step - 1]}</span>
       </div>
-      <div className="h-2.5 w-full bg-slate-100 rounded-full overflow-hidden shadow-inner">
+      <div className="h-2.5 w-full bg-[#15182B]/10 rounded-full overflow-visible shadow-inner relative">
         <div
-          className="h-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)] transition-all duration-500 animate-[pulse_2s_infinite]"
+          className="absolute left-0 top-0 h-full bg-[#96EE52] shadow-[0_0_12px_rgba(150,238,82,0.8)] rounded-full transition-all duration-500 animate-[pulse_2s_infinite]"
           style={{ width: `${pct}%` }}
           role="progressbar"
           aria-valuenow={step}
@@ -62,15 +62,15 @@ function ProgressBar({ step, total }: { step: number; total: number }) {
           return (
             <div key={i} className="relative flex items-center justify-center w-4 h-4">
               {isActive && (
-                <span className="absolute animate-ping inline-flex h-3.5 w-3.5 rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="absolute animate-ping inline-flex h-3.5 w-3.5 rounded-full bg-[#96EE52] opacity-75"></span>
               )}
               <span
                 className={`relative rounded-full transition-all duration-300 ${
                   isActive
-                    ? "w-2.5 h-2.5 bg-emerald-500 shadow-[0_0_6px_#10b981]"
+                    ? "w-2.5 h-2.5 bg-[#96EE52] shadow-[0_0_8px_#96EE52]"
                     : isCompleted
-                    ? "w-2 h-2 bg-emerald-400"
-                    : "w-1.5 h-1.5 bg-slate-200"
+                    ? "w-2 h-2 bg-[#96EE52]"
+                    : "w-1.5 h-1.5 bg-[#15182B]/20"
                 }`}
               />
             </div>
