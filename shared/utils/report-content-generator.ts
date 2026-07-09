@@ -520,5 +520,5 @@ export function renderReportToHtml(report: ReportData, options: { mode: "web" | 
     \${bodyContent}
   </div>
 </body>
-</html>\`;
+</html>`;
 }
