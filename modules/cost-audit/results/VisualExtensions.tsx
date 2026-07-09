@@ -221,6 +221,5 @@ export const OptimizationOpportunities = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };

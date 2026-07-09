@@ -229,6 +229,5 @@ export const GrowthOpportunities = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
