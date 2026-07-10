@@ -1,4 +1,4 @@
-import { ReportData, renderReportToHtml } from "./report-content-generator";
+  import { ReportData, renderReportToHtml } from "./report-content-generator";
 import { BrowserFactory } from "./browser-factory";
 import { Logger } from "./logger";
 import fs from "fs";
@@ -22,13 +22,13 @@ export function getTierStyles(tier: number) {
 
 export async function loadLogoBase64(): Promise<string> {
   try {
-    const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo.jpg");
+    const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo.png");
     if (fs.existsSync(logoPath)) {
       const logoData = fs.readFileSync(logoPath);
-      return `data:image/jpeg;base64,${logoData.toString("base64")}`;
+      return `data:image/png;base64,${logoData.toString("base64")}`;
     }
   } catch (err) {
-    console.warn("[pdf-generator] Could not load logo.jpg, using placeholder");
+    console.warn("[pdf-generator] Could not load logo.png, using placeholder");
   }
     return "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 }
@@ -860,31 +860,9 @@ export function generateBasicTextPdf(data: ReportData, logoBuffer: Buffer | null
 }
 
 export async function generatePdf(data: ReportData): Promise<Buffer> {
-  let logoBuffer: Buffer | null = null;
-  try {
-    const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo.png");
-    if (fs.existsSync(logoPath)) {
-      const globalAny = global as any;
-      if (globalAny.cachedLogoJpegBuffer) {
-        logoBuffer = globalAny.cachedLogoJpegBuffer;
-      } else {
-        const sharp = require('sharp');
-        logoBuffer = await sharp(logoPath)
-          .flatten({ background: '#9BED58' })
-          .jpeg({ quality: 95 })
-          .toBuffer();
-        globalAny.cachedLogoJpegBuffer = logoBuffer;
-      }
-    }
-  } catch (e) {
-    Logger.warn(`Could not convert logo.png asynchronously: ${e}`);
-  }
-
-  let logoBase64 = data.logoBase64;
-  if (!logoBase64 && logoBuffer) {
-    logoBase64 = `data:image/jpeg;base64,${logoBuffer.toString("base64")}`;
-    data.logoBase64 = logoBase64;
-  }
+  const logoBuffer: Buffer | null = null;
+  const logoBase64 = await loadLogoBase64();
+  data.logoBase64 = logoBase64;
   
   let browser;
   try {
