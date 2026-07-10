@@ -15,8 +15,8 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-[#9BED58] border-b border-black/10">
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="flex items-center justify-between h-[85px]">
-          <a href="/" className="flex items-end h-full pb-1 hover:opacity-90 transition-opacity">
-            <BrandLogo size={75} showText={false} />
+          <a href="/" className="flex items-end h-full hover:opacity-90 transition-opacity pb-2">
+            <BrandLogo size={100} showText={false} />
           </a>
 
           {/* Nav Links */}

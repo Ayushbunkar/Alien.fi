@@ -61,10 +61,10 @@ export function generateBasicTextPdf(data: ReportData): Buffer {
   try {
     const fs = require('fs');
     const path = require('path');
-    const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo_pdf.jpg");
+    const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo.png");
     logoBuffer = fs.readFileSync(logoPath);
   } catch (e) {
-    console.warn("Could not load logo_pdf.jpg");
+    console.warn("Could not load logo.png");
   }
   
   const pagesData: { shapes: string[], textLines: { text: string, x: number, y: number, font: 'F1' | 'F2', size: number, r: number, g: number, b: number }[] }[] = [];
@@ -873,7 +873,7 @@ export async function generatePdf(data: ReportData): Promise<Buffer> {
   let logoBase64 = data.logoBase64;
   if (!logoBase64) {
     try {
-      const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo.jpg");
+      const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo.png");
       const logoData = fs.readFileSync(logoPath);
       logoBase64 = `data:image/jpeg;base64,${logoData.toString("base64")}`;
       data.logoBase64 = logoBase64;
