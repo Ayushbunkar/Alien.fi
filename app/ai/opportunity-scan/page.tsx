@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import Image from "next/image";
 import { OpportunityWizard } from "@/modules/opportunity-audit/questions/OpportunityWizard";
+import { BrandLogo } from "@/components/BrandLogo";
 import { ContactBar } from "@/shared/components/ContactBar";
 import { Target, Lightbulb, ClipboardList } from "lucide-react";
 import * as motion from "framer-motion/client";
@@ -39,7 +40,7 @@ export default async function AiOpportunityScanPage({ searchParams }: PageProps)
       >
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-            <Image src="/assets/logo/logo.jpg" alt="Alien.fi" width={160} height={48} className="h-12 w-auto object-contain" />
+            <BrandLogo size={32} showText={false} />
           </a>
           <a
             href="https://alien.fi/services/"

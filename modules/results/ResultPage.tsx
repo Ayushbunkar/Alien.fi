@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
+import { BrandLogo } from "@/components/BrandLogo";
 
 import { ContactBar } from "@/shared/components/ContactBar";
 import * as motion from "framer-motion/client";
@@ -123,7 +124,7 @@ export default function ResultPage() {
       >
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-            <Image src="/assets/logo/logo.jpg" alt="Alien.fi" width={160} height={48} className="h-12 w-auto object-contain" />
+            <BrandLogo size={32} showText={false} />
           </a>
           <button
             onClick={() => router.back()}

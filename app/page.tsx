@@ -2,6 +2,7 @@
 
 import type { Metadata } from "next";
 import { ArrowRight, ArrowUpRight, ShieldAlert, Sparkles, Zap, TrendingUp, Cpu, FileText, BarChart3, CheckCircle2, Clock, Network, BrainCircuit, Lock, Mail, Calendar, Phone, Mail as MailIcon, MessageSquare, ChevronDown, ChevronUp, Menu, X, Search, DollarSign, Activity, Layers, Target, Zap as ZapIcon, Lightbulb, BookOpen, Users, Globe, Lock as LockIcon, Unlock, CheckCircle, AlertTriangle, Info, HelpCircle, ChevronRight, Filter, Download, Share2, Settings, MoreHorizontal, Plus, Minus, Trash2, Edit, Copy, Save, Upload, RefreshCw, Play, Pause, SkipForward, SkipBack, Rewind, FastForward, Volume2, VolumeX, Maximize2, Minimize2, Maximize, Minimize } from "lucide-react";
+import { BrandLogo } from "@/components/BrandLogo";
 import * as motion from "framer-motion/client";
 import { slideUp, staggerContainer, fadeIn } from "@/shared/components/animations";
 import { ContactBar } from "@/shared/components/ContactBar";
@@ -602,13 +603,34 @@ function Header() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-[70px]">
           {/* Logo */}
-          <a href="/" className="flex items-center">
-            <img src="/assets/logo/logo.jpg" alt="Alien.fi" className="h-12 w-auto object-contain transition-transform duration-300 hover:scale-105 cursor-pointer" />
+          <a href="/" className="flex items-center hover:opacity-90 transition-opacity">
+            <BrandLogo size={32} showText={false} />
           </a>
 
           {/* Nav Links */}
           <div className="hidden md:flex gap-6 items-center">
-            <a href="#services" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors flex items-center gap-1">Services <ChevronDown className="w-3 h-3" /></a>
+            <div className="relative group">
+              <a href="#services" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors flex items-center gap-1 py-4">
+                Services <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
+              </a>
+              <div className="absolute top-[85%] left-0 w-60 bg-[#FAFAFA] rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-[#EAEAEA] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50 overflow-hidden py-3">
+                {[
+                  "AI Agents",
+                  "AI Copilots",
+                  "AI Implementation",
+                  "AI Strategy",
+                  "Custom Models",
+                  "Managed AI",
+                  "RAG Accelerator",
+                  "AI Training",
+                  "AI Governance"
+                ].map((item, idx) => (
+                  <a key={idx} href={`#${item.toLowerCase().replace(/ /g, '-')}`} className="block px-6 py-2.5 text-[13px] font-semibold text-[#666666] hover:bg-[#F0F0F0] hover:text-[#1a1a1a] transition-colors font-mono">
+                    {item}
+                  </a>
+                ))}
+              </div>
+            </div>
             <a href="#platform" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors flex items-center gap-1">Platform <ChevronDown className="w-3 h-3" /></a>
             <a href="#industries" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors">Industries</a>
             <a href="#solutions" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors">Solutions</a>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ContactBar } from "@/shared/components/ContactBar";
+import { BrandLogo } from "@/components/BrandLogo";
 import { Target, Lightbulb, ClipboardList } from "lucide-react";
 import { CostScanWizard } from "@/modules/cost-audit/questions/CostScanWizard";
 
@@ -28,7 +29,7 @@ export default function AiCostScanPage() {
       >
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-            <Image src="/assets/logo/logo.jpg" alt="Alien.fi" width={160} height={48} className="h-12 w-auto object-contain" />
+            <BrandLogo size={32} showText={false} />
           </a>
           <a
             href="https://alien.fi/services/"
