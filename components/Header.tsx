@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { BrandLogo } from "./BrandLogo";
 import { AnimatedLink } from "./AnimatedLink";
 import { RollingText } from "./RollingText";
+import { MagneticWrapper } from "./MagneticWrapper";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,35 +21,76 @@ export function Header() {
 
           {/* Nav Links */}
           <div className="hidden md:flex gap-6 items-center">
-            <div className="relative group">
-              <a href="/#services" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors flex items-center gap-1 py-4">
-                Services <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
-              </a>
-              <div className="absolute top-[85%] left-0 w-60 bg-[#FAFAFA] rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-[#EAEAEA] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-50 overflow-hidden py-3">
-                {[
-                  "AI Agents",
-                  "AI Copilots",
-                  "AI Implementation",
-                  "AI Strategy",
-                  "Custom Models",
-                  "Managed AI",
-                  "RAG Accelerator",
-                  "AI Training",
-                  "AI Governance"
-                ].map((item, idx) => (
-                  <a key={idx} href={`/#${item.toLowerCase().replace(/ /g, '-')}`} className="block px-6 py-2.5 text-[13px] font-semibold text-[#666666] hover:bg-[#F0F0F0] hover:text-[#1a1a1a] transition-colors font-mono">
-                    {item}
-                  </a>
-                ))}
+            <MagneticWrapper>
+              <div className="relative group/menu">
+                <a href="/#services" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors flex items-center gap-1 py-4 group">
+                  <RollingText text="Services" />
+                  <ChevronDown className="w-3 h-3 transition-transform group-hover/menu:rotate-180" />
+                </a>
+                <div className="absolute top-[85%] left-0 w-60 bg-[#FAFAFA] rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-[#EAEAEA] opacity-0 invisible group-hover/menu:opacity-100 group-hover/menu:visible transition-all duration-200 transform translate-y-2 group-hover/menu:translate-y-0 z-50 overflow-hidden py-3">
+                  {[
+                    "AI Agents",
+                    "AI Copilots",
+                    "AI Implementation",
+                    "AI Strategy",
+                    "Custom Models",
+                    "Managed AI",
+                    "RAG Accelerator",
+                    "AI Training",
+                    "AI Governance"
+                  ].map((item, idx) => (
+                    <a key={idx} href={`/#${item.toLowerCase().replace(/ /g, '-')}`} className="block px-6 py-2.5 text-[13px] font-semibold text-[#666666] hover:bg-[#F0F0F0] hover:text-[#1a1a1a] transition-colors font-mono">
+                      {item}
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
-            <a href="/#platform" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors flex items-center gap-1">Platform <ChevronDown className="w-3 h-3" /></a>
-            <a href="/#industries" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors">Industries</a>
-            <a href="/#solutions" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors">Solutions</a>
-            <a href="/#case-studies" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors flex items-center gap-1">Case Studies <ChevronDown className="w-3 h-3" /></a>
-            <a href="/#about" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors flex items-center gap-1">About <ChevronDown className="w-3 h-3" /></a>
-            <a href="/#blog" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors">Blog</a>
-            <a href="/#contact" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors">Contact</a>
+            </MagneticWrapper>
+            
+            <MagneticWrapper>
+              <a href="/#platform" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors flex items-center gap-1 group">
+                <RollingText text="Platform" />
+                <ChevronDown className="w-3 h-3" />
+              </a>
+            </MagneticWrapper>
+            
+            <MagneticWrapper>
+              <a href="/#industries" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors group">
+                <RollingText text="Industries" />
+              </a>
+            </MagneticWrapper>
+
+            <MagneticWrapper>
+              <a href="/#solutions" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors group">
+                <RollingText text="Solutions" />
+              </a>
+            </MagneticWrapper>
+
+            <MagneticWrapper>
+              <a href="/#case-studies" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors flex items-center gap-1 group">
+                <RollingText text="Case Studies" />
+                <ChevronDown className="w-3 h-3" />
+              </a>
+            </MagneticWrapper>
+
+            <MagneticWrapper>
+              <a href="/#about" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors flex items-center gap-1 group">
+                <RollingText text="About" />
+                <ChevronDown className="w-3 h-3" />
+              </a>
+            </MagneticWrapper>
+
+            <MagneticWrapper>
+              <a href="/#blog" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors group">
+                <RollingText text="Blog" />
+              </a>
+            </MagneticWrapper>
+
+            <MagneticWrapper>
+              <a href="/#contact" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors group">
+                <RollingText text="Contact" />
+              </a>
+            </MagneticWrapper>
           </div>
 
           {/* CTA Button */}

@@ -6,6 +6,7 @@ import { Header } from "@/components/Header";
 import { RollingText } from "@/components/RollingText";
 import { AnimatedLink } from "@/components/AnimatedLink";
 import { BrandLogo } from "@/components/BrandLogo";
+import { MagneticWrapper } from "@/components/MagneticWrapper";
 import * as motion from "framer-motion/client";
 import { slideUp, staggerContainer, fadeIn } from "@/shared/components/animations";
 import { ContactBar } from "@/shared/components/ContactBar";
@@ -419,10 +420,12 @@ function AuditCards() {
               </li>
             </ul>
 
-            <span className="pp-btn-primary w-full">
-              <RollingText text="INITIALIZE COST AUDIT" />
-              <ArrowRight className="w-4 h-4" />
-            </span>
+            <MagneticWrapper>
+              <span className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold bg-[#96EE52] text-[#15182B] group-hover:-translate-y-1 transition-all duration-300 w-full whitespace-nowrap shadow-[0_4px_14px_rgba(150,238,82,0.4)]">
+                <RollingText text="INITIALIZE COST AUDIT" />
+                <ArrowRight className="w-4 h-4" />
+              </span>
+            </MagneticWrapper>
           </motion.a>
 
           {/* Opportunity Audit Card */}
@@ -456,10 +459,12 @@ function AuditCards() {
               </li>
             </ul>
 
-            <span className="pp-btn-secondary w-full">
-              <RollingText text="IDENTIFY OPPORTUNITIES" />
-              <ArrowRight className="w-4 h-4" />
-            </span>
+            <MagneticWrapper>
+              <span className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold bg-transparent border border-[#15182B]/20 text-[#15182B] group-hover:bg-[#15182B]/5 group-hover:-translate-y-1 transition-all duration-300 w-full whitespace-nowrap">
+                <RollingText text="IDENTIFY OPPORTUNITIES" />
+                <ArrowRight className="w-4 h-4" />
+              </span>
+            </MagneticWrapper>
           </motion.a>
         </div>
       </div>
@@ -480,13 +485,15 @@ function Hero() {
             animate="show"
             className="space-y-8"
           >
-            <motion.div 
-              variants={slideUp}
-              className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-[#15182B]/20 bg-white/50 text-[#15182B] text-xs font-bold font-mono uppercase tracking-widest"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#96EE52] animate-pulse shadow-[0_0_8px_#96EE52]" />
-              Alien AI Diagnostic Suite
-            </motion.div>
+            <MagneticWrapper>
+              <motion.div 
+                variants={slideUp}
+                className="group inline-flex items-center justify-center gap-3 px-4 py-2 rounded-full border border-[#15182B]/20 bg-white/50 text-[#15182B] text-xs font-bold font-mono uppercase tracking-widest cursor-default"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#96EE52] animate-pulse shadow-[0_0_8px_#96EE52]" />
+                <RollingText text="Alien AI Diagnostic Suite" />
+              </motion.div>
+            </MagneticWrapper>
 
             <motion.h1 
               variants={slideUp}
