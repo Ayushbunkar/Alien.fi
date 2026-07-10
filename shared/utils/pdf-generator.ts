@@ -61,10 +61,21 @@ export function generateBasicTextPdf(data: ReportData): Buffer {
   try {
     const fs = require('fs');
     const path = require('path');
+    const { execSync } = require('child_process');
     const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo.png");
-    logoBuffer = fs.readFileSync(logoPath);
+    if (fs.existsSync(logoPath)) {
+      const globalAny = global as any;
+      if (globalAny.cachedLogoJpegBuffer) {
+        logoBuffer = globalAny.cachedLogoJpegBuffer;
+      } else {
+        const cmd = `node -e "require('sharp')('${logoPath.replace(/\\/g, '\\\\')}').flatten({ background: '#9BED58' }).jpeg({ quality: 95 }).toBuffer().then(b => console.log(b.toString('base64')))"`;
+        const jpegBase64 = execSync(cmd, { maxBuffer: 1024 * 1024 * 10 }).toString().trim();
+        logoBuffer = Buffer.from(jpegBase64, 'base64');
+        globalAny.cachedLogoJpegBuffer = logoBuffer;
+      }
+    }
   } catch (e) {
-    console.warn("Could not load logo.png");
+    console.warn("Could not convert logo.png to PDF JPEG buffer synchronously:", e);
   }
   
   const pagesData: { shapes: string[], textLines: { text: string, x: number, y: number, font: 'F1' | 'F2', size: number, r: number, g: number, b: number }[] }[] = [];
@@ -87,7 +98,7 @@ export function generateBasicTextPdf(data: ReportData): Buffer {
     currentPage.shapes.push(`0.59 0.93 0.32 rg\n0 790 595.28 52 re f`); 
     
     if (logoBuffer) {
-      currentPage.shapes.push(`q 54 0 0 36 30 798 cm /Im1 Do Q`); // 1.5 aspect ratio (54x36)
+      currentPage.shapes.push(`q 54 0 0 36 30 791 cm /Im1 Do Q`); // 1.5 aspect ratio (54x36)
     } else {
       currentPage.textLines.push({ text: "Alien", x: 30, y: 810, font: 'F2', size: 22, r: 0.08, g: 0.09, b: 0.17 });
       currentPage.textLines.push({ text: ".fi", x: 88, y: 810, font: 'F2', size: 22, r: 0.13, g: 0.77, b: 0.36 });

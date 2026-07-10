@@ -34,7 +34,7 @@ export function BrandLogo({
           alt="Alien.fi"
           width={Math.round(w)}
           height={size}
-          style={{ height: size, width: 'auto' }}
+          style={{ height: size, width: 'auto', transform: 'translateY(15px)' }}
           className="object-contain"
           priority
         />
