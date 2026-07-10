@@ -57,9 +57,15 @@ function wrapText(text: string, maxChars: number): string[] {
 export function generateBasicTextPdf(data: ReportData): Buffer {
   const objects: { id: number; data: string | Buffer }[] = [];
   
-  // We bypass inserting the 2.1MB logo.jpg as it corrupts the PDF xref stream.
-  // We will reliably use the beautifully styled text fallback instead.
   let logoBuffer: Buffer | null = null;
+  try {
+    const fs = require('fs');
+    const path = require('path');
+    const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo_pdf.jpg");
+    logoBuffer = fs.readFileSync(logoPath);
+  } catch (e) {
+    console.warn("Could not load logo_pdf.jpg");
+  }
   
   const pagesData: { shapes: string[], textLines: { text: string, x: number, y: number, font: 'F1' | 'F2', size: number, r: number, g: number, b: number }[] }[] = [];
   
@@ -81,7 +87,7 @@ export function generateBasicTextPdf(data: ReportData): Buffer {
     currentPage.shapes.push(`0.59 0.93 0.32 rg\n0 790 595.28 52 re f`); 
     
     if (logoBuffer) {
-      currentPage.shapes.push(`q 126 0 0 36 30 798 cm /Im1 Do Q`);
+      currentPage.shapes.push(`q 54 0 0 36 30 798 cm /Im1 Do Q`); // 1.5 aspect ratio (54x36)
     } else {
       currentPage.textLines.push({ text: "Alien", x: 30, y: 810, font: 'F2', size: 22, r: 0.08, g: 0.09, b: 0.17 });
       currentPage.textLines.push({ text: ".fi", x: 88, y: 810, font: 'F2', size: 22, r: 0.13, g: 0.77, b: 0.36 });
@@ -746,6 +752,18 @@ export function generateBasicTextPdf(data: ReportData): Buffer {
   
   let nextObjId = pageCount + 5;
   let logoObjId = -1;
+  
+  if (logoBuffer) {
+    logoObjId = nextObjId++;
+    objects.push({
+      id: logoObjId,
+      data: Buffer.concat([
+        Buffer.from(`<< /Type /XObject /Subtype /Image /Width 150 /Height 100 /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${logoBuffer.length} >>\nstream\n`),
+        logoBuffer,
+        Buffer.from(`\nendstream`)
+      ])
+    });
+  }
   
   const resourcesObj = `<< /Font << /F1 ${fontF1Id} 0 R /F2 ${fontF2Id} 0 R >> ${logoObjId !== -1 ? `/XObject << /Im1 ${logoObjId} 0 R >>` : ''} >>`;
   
