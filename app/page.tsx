@@ -3,6 +3,8 @@
 import type { Metadata } from "next";
 import { ArrowRight, ArrowUpRight, ShieldAlert, Sparkles, Zap, TrendingUp, Cpu, FileText, BarChart3, CheckCircle2, Clock, Network, BrainCircuit, Lock, Mail, Calendar, Phone, Mail as MailIcon, MessageSquare, ChevronDown, ChevronUp, Menu, X, Search, DollarSign, Activity, Layers, Target, Zap as ZapIcon, Lightbulb, BookOpen, Users, Globe, Lock as LockIcon, Unlock, CheckCircle, AlertTriangle, Info, HelpCircle, ChevronRight, Filter, Download, Share2, Settings, MoreHorizontal, Plus, Minus, Trash2, Edit, Copy, Save, Upload, RefreshCw, Play, Pause, SkipForward, SkipBack, Rewind, FastForward, Volume2, VolumeX, Maximize2, Minimize2, Maximize, Minimize } from "lucide-react";
 import { Header } from "@/components/Header";
+import { RollingText } from "@/components/RollingText";
+import { AnimatedLink } from "@/components/AnimatedLink";
 import { BrandLogo } from "@/components/BrandLogo";
 import * as motion from "framer-motion/client";
 import { slideUp, staggerContainer, fadeIn } from "@/shared/components/animations";
@@ -418,7 +420,7 @@ function AuditCards() {
             </ul>
 
             <span className="pp-btn-primary w-full">
-              INITIALIZE COST AUDIT
+              <RollingText text="INITIALIZE COST AUDIT" />
               <ArrowRight className="w-4 h-4" />
             </span>
           </motion.a>
@@ -454,8 +456,8 @@ function AuditCards() {
               </li>
             </ul>
 
-            <span className="pp-btn-ghost w-full">
-              INITIALIZE OPPORTUNITY
+            <span className="pp-btn-secondary w-full">
+              <RollingText text="IDENTIFY OPPORTUNITIES" />
               <ArrowRight className="w-4 h-4" />
             </span>
           </motion.a>
@@ -505,13 +507,13 @@ function Hero() {
               variants={slideUp}
               className="flex flex-col sm:flex-row gap-4 pt-4"
             >
-              <a
+              <AnimatedLink
                 href="#audit-cards"
-                className="pp-btn-primary shadow-[0_8px_24px_rgba(0,0,0,0.12)]"
-              >
-                ACCESS PLATFORM
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </a>
+                text="START FREE AUDIT"
+                icon={<ArrowRight className="w-4 h-4" />}
+                variant="primary"
+                className="w-full sm:w-auto justify-center"
+              />
             </motion.div>
 
             <motion.div 
@@ -625,12 +627,12 @@ function FinalCTA() {
             >
               RUN COST AUDIT
             </a>
-            <a
+            <AnimatedLink
               href="/ai/opportunity-scan"
-              className="px-8 py-4 bg-transparent border border-white/20 text-white rounded-lg font-mono font-bold hover:bg-white/10 transition-colors"
-            >
-              RUN OPPORTUNITY AUDIT
-            </a>
+              text="Identify Opportunities"
+              variant="outline"
+              className="w-full justify-center"
+            />
           </div>
         </motion.div>
       </div>

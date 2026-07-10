@@ -1,5 +1,6 @@
 "use client";
 import { Check, AlertTriangle } from "lucide-react";
+import { RollingText } from "@/components/RollingText";
 // ─────────────────────────────────────────────────────────────────────────────
 // Reusable primitives shared by all step components
 // ─────────────────────────────────────────────────────────────────────────────
@@ -29,7 +30,7 @@ export function OptionCard({
       aria-checked={selected}
       disabled={disabled}
       onClick={onClick}
-      className={`option-card w-full text-left ${selectedClass} ${disabled ? "opacity-40 cursor-not-allowed" : ""}`}
+      className={`group option-card w-full text-left ${selectedClass} ${disabled ? "opacity-40 cursor-not-allowed" : ""}`}
     >
       {/* Selection indicator */}
       <span
@@ -52,7 +53,9 @@ export function OptionCard({
       <div className="flex-1">
         <span className="flex items-center gap-2">
           {icon && <span className="text-lg">{icon}</span>}
-          <span className={`text-sm font-semibold transition-colors ${multi && selected ? 'text-white' : 'text-slate-900 group-hover:text-[#96EE52]'}`}>{label}</span>
+          <span className={`text-sm font-semibold transition-colors ${multi && selected ? 'text-white' : 'text-slate-900 group-hover:text-[#96EE52]'}`}>
+            <RollingText text={label} />
+          </span>
         </span>
         {sublabel && (
           <p className={`mt-1 text-xs ml-7 leading-relaxed ${multi && selected ? 'text-slate-200' : 'text-slate-600'}`}>

@@ -6,6 +6,7 @@ import {
   UploadCloud, FileText, Trash2, Globe, Sparkles, Cpu, Layers, 
   Activity, FileSpreadsheet, DollarSign, ImageIcon, X, AlertCircle, Info
 } from "lucide-react";
+import { RollingText } from "@/components/RollingText";
 import toast from "react-hot-toast";
 import { uploadFile } from "@/shared/utils/frontend-storage.service";
 
@@ -284,13 +285,13 @@ export function TechnicalStep({
                         key={provider}
                         type="button"
                         onClick={() => toggleProvider(provider)}
-                        className={`px-2.5 py-1.5 rounded-lg border text-xs font-medium transition-all ${
+                        className={`group px-2.5 py-1.5 rounded-lg border text-xs font-medium transition-all ${
                           selected
                             ? "bg-[#96EE52] text-[#15182B] border-[#96EE52] shadow-sm"
                             : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50"
                         }`}
                       >
-                        {provider}
+                        <RollingText text={provider} />
                       </button>
                     );
                   })}
@@ -310,13 +311,13 @@ export function TechnicalStep({
                         key={infra}
                         type="button"
                         onClick={() => toggleInfra(infra)}
-                        className={`px-2.5 py-1.5 rounded-lg border text-xs font-medium transition-all ${
+                        className={`group px-2.5 py-1.5 rounded-lg border text-xs font-medium transition-all ${
                           selected
                             ? "bg-[#96EE52] text-[#15182B] border-[#96EE52] shadow-sm"
                             : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50"
                         }`}
                       >
-                        {infra}
+                        <RollingText text={infra} />
                       </button>
                     );
                   })}
@@ -353,13 +354,13 @@ export function TechnicalStep({
                         key={cap}
                         type="button"
                         onClick={() => toggleOther(cap)}
-                        className={`px-2.5 py-1.5 rounded-lg border text-xs font-medium transition-all ${
+                        className={`group px-2.5 py-1.5 rounded-lg border text-xs font-medium transition-all ${
                           selected
                             ? "bg-[#96EE52] text-[#15182B] border-[#96EE52] shadow-sm"
                             : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50"
                         }`}
                       >
-                        {cap}
+                        <RollingText text={cap} />
                       </button>
                     );
                   })}

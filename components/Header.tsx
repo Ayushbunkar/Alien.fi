@@ -4,6 +4,8 @@ import { useState } from "react";
 import { ChevronDown, ArrowUpRight, Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { BrandLogo } from "./BrandLogo";
+import { AnimatedLink } from "./AnimatedLink";
+import { RollingText } from "./RollingText";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,13 +53,11 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <a
+            <AnimatedLink
               href="/#audit-cards"
-              className="px-5 py-2.5 bg-[#000] text-white text-sm font-bold rounded-lg hover:bg-[#222] transition-colors inline-flex items-center gap-2"
-            >
-              Start a project
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
+              text="Start a project"
+              icon={<ArrowUpRight className="w-4 h-4" />}
+            />
           </div>
 
           {/* Mobile Menu Button */}
@@ -78,13 +78,12 @@ export function Header() {
             className="md:hidden py-4 border-t border-[#15182B]/10"
           >
             <nav className="flex flex-col gap-4">
-              <a
+              <AnimatedLink
                 href="/#audit-cards"
-                className="px-5 py-3 bg-[#000] text-white text-center rounded-lg font-mono font-bold text-xs"
+                text="START AUDIT"
+                className="w-full justify-center text-center font-mono text-xs"
                 onClick={() => setIsMenuOpen(false)}
-              >
-                START AUDIT
-              </a>
+              />
             </nav>
           </motion.div>
         )}

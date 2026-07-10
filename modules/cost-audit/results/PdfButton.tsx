@@ -3,6 +3,7 @@
 import { useState, useCallback } from "react";
 import { Loader2, Download } from "lucide-react";
 import toast from "react-hot-toast";
+import { AnimatedButton } from "@/components/AnimatedButton";
 
 interface PdfButtonProps {
   submissionId?: string;
@@ -55,26 +56,17 @@ export function PdfButton({ submissionId }: PdfButtonProps) {
   }, [submissionId]);
 //dsa
   return (
-    <button
+    <AnimatedButton
       type="button"
       id="cost-scan-pdf-export-btn"
       onClick={exportPdf}
       disabled={loading}
-      className="pp-btn-ghost text-sm border border-slate-300 hover:border-slate-400 text-slate-700"
+      variant="outline"
+      className="text-sm border-slate-300 hover:border-slate-400 text-slate-700"
       aria-label="Download PDF Report"
       title="PDF export"
-    >
-      {loading ? (
-        <>
-          <Loader2 className="w-4 h-4 mr-1.5 animate-spin" />
-          Generating…
-        </>
-      ) : (
-        <>
-          <Download className="w-4 h-4 mr-1.5" strokeWidth={2} />
-          Download PDF Report
-        </>
-      )}
-    </button>
+      text={loading ? "Generating…" : "Download PDF Report"}
+      icon={loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" strokeWidth={2} />}
+    />
   );
 }
