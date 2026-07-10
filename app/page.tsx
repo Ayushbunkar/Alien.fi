@@ -1,7 +1,7 @@
 "use client";
 
 import type { Metadata } from "next";
-import { ArrowRight, ShieldAlert, Sparkles, Zap, TrendingUp, Cpu, FileText, BarChart3, CheckCircle2, Clock, Network, BrainCircuit, Lock, Mail, Calendar, Phone, Mail as MailIcon, MessageSquare, ChevronDown, ChevronUp, Menu, X, Search, DollarSign, Activity, Layers, Target, Zap as ZapIcon, Lightbulb, BookOpen, Users, Globe, Lock as LockIcon, Unlock, CheckCircle, AlertTriangle, Info, HelpCircle, ChevronRight, Filter, Download, Share2, Settings, MoreHorizontal, Plus, Minus, Trash2, Edit, Copy, Save, Upload, RefreshCw, Play, Pause, SkipForward, SkipBack, Rewind, FastForward, Volume2, VolumeX, Maximize2, Minimize2, Maximize, Minimize } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ShieldAlert, Sparkles, Zap, TrendingUp, Cpu, FileText, BarChart3, CheckCircle2, Clock, Network, BrainCircuit, Lock, Mail, Calendar, Phone, Mail as MailIcon, MessageSquare, ChevronDown, ChevronUp, Menu, X, Search, DollarSign, Activity, Layers, Target, Zap as ZapIcon, Lightbulb, BookOpen, Users, Globe, Lock as LockIcon, Unlock, CheckCircle, AlertTriangle, Info, HelpCircle, ChevronRight, Filter, Download, Share2, Settings, MoreHorizontal, Plus, Minus, Trash2, Edit, Copy, Save, Upload, RefreshCw, Play, Pause, SkipForward, SkipBack, Rewind, FastForward, Volume2, VolumeX, Maximize2, Minimize2, Maximize, Minimize } from "lucide-react";
 import * as motion from "framer-motion/client";
 import { slideUp, staggerContainer, fadeIn } from "@/shared/components/animations";
 import { ContactBar } from "@/shared/components/ContactBar";
@@ -598,29 +598,34 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-[#EEF4FF]/90 backdrop-blur-md border-b border-[#15182B]/10">
+    <header className="sticky top-0 z-50 bg-[#9BED58] border-b border-black/10">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-between h-[60px]">
+        <div className="flex items-center justify-between h-[70px]">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <img src="/assets/logo/logo-transparent.png" alt="Alien.fi" className="h-5 w-auto object-contain transition-transform duration-300 hover:scale-105 cursor-pointer" style={{ filter: 'invert(1) contrast(1000%)', mixBlendMode: 'multiply' }} />
+            <img src="/assets/logo/logo-transparent.png" alt="Alien.fi" className="h-6 w-auto object-contain transition-transform duration-300 hover:scale-105 cursor-pointer" style={{ filter: 'invert(1) contrast(1000%)', mixBlendMode: 'multiply' }} />
           </a>
 
           {/* Nav Links */}
           <div className="hidden md:flex gap-6 items-center">
-            <a href="#services" className="font-mono text-xs font-semibold text-[#15182B]/60 hover:text-[#15182B] transition-colors">Services</a>
-            <a href="#industries" className="font-mono text-xs font-semibold text-[#15182B]/60 hover:text-[#15182B] transition-colors">Industries</a>
-            <a href="#about" className="font-mono text-xs font-semibold text-[#15182B]/60 hover:text-[#15182B] transition-colors">About</a>
+            <a href="#services" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors flex items-center gap-1">Services <ChevronDown className="w-3 h-3" /></a>
+            <a href="#platform" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors flex items-center gap-1">Platform <ChevronDown className="w-3 h-3" /></a>
+            <a href="#industries" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors">Industries</a>
+            <a href="#solutions" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors">Solutions</a>
+            <a href="#case-studies" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors flex items-center gap-1">Case Studies <ChevronDown className="w-3 h-3" /></a>
+            <a href="#about" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors flex items-center gap-1">About <ChevronDown className="w-3 h-3" /></a>
+            <a href="#blog" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors">Blog</a>
+            <a href="#contact" className="text-sm font-semibold text-[#1a1a1a] hover:opacity-70 transition-colors">Contact</a>
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
             <a
               href="#audit-cards"
-              className="px-4 py-2 bg-[#000] text-white text-[11px] font-mono font-bold rounded-lg hover:bg-[#222] transition-colors inline-flex items-center gap-2"
+              className="px-5 py-2.5 bg-[#000] text-white text-sm font-bold rounded-lg hover:bg-[#222] transition-colors inline-flex items-center gap-2"
             >
-              Start Project
-              <ArrowRight className="w-3 h-3" />
+              Start a project
+              <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
 
@@ -702,9 +707,6 @@ function FinalCTA() {
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-transparent">
-      {/* Contact Bar */}
-      <ContactBar containerClassName="max-w-6xl" />
-
       {/* Header */}
       <Header />
 
