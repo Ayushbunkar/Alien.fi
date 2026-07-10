@@ -57,10 +57,9 @@ function wrapText(text: string, maxChars: number): string[] {
 export function generateBasicTextPdf(data: ReportData): Buffer {
   const objects: { id: number; data: string | Buffer }[] = [];
   
+  // We bypass inserting the 2.1MB logo.jpg as it corrupts the PDF xref stream.
+  // We will reliably use the beautifully styled text fallback instead.
   let logoBuffer: Buffer | null = null;
-  if (data.logoBase64 && data.logoBase64.startsWith("data:image/jpeg;base64,")) {
-    logoBuffer = Buffer.from(data.logoBase64.split(",")[1], "base64");
-  }
   
   const pagesData: { shapes: string[], textLines: { text: string, x: number, y: number, font: 'F1' | 'F2', size: number, r: number, g: number, b: number }[] }[] = [];
   
@@ -747,18 +746,6 @@ export function generateBasicTextPdf(data: ReportData): Buffer {
   
   let nextObjId = pageCount + 5;
   let logoObjId = -1;
-  
-  if (logoBuffer) {
-    logoObjId = nextObjId++;
-    objects.push({
-      id: logoObjId,
-      data: Buffer.concat([
-        Buffer.from(`<< /Type /XObject /Subtype /Image /Width 1400 /Height 400 /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${logoBuffer.length} >>\nstream\n`),
-        logoBuffer,
-        Buffer.from(`\nendstream`)
-      ])
-    });
-  }
   
   const resourcesObj = `<< /Font << /F1 ${fontF1Id} 0 R /F2 ${fontF2Id} 0 R >> ${logoObjId !== -1 ? `/XObject << /Im1 ${logoObjId} 0 R >>` : ''} >>`;
   
