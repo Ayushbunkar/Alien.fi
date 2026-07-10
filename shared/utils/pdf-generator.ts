@@ -54,29 +54,8 @@ function wrapText(text: string, maxChars: number): string[] {
   return lines;
 }
 
-export function generateBasicTextPdf(data: ReportData): Buffer {
+export function generateBasicTextPdf(data: ReportData, logoBuffer: Buffer | null = null): Buffer {
   const objects: { id: number; data: string | Buffer }[] = [];
-  
-  let logoBuffer: Buffer | null = null;
-  try {
-    const fs = require('fs');
-    const path = require('path');
-    const { execSync } = require('child_process');
-    const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo.png");
-    if (fs.existsSync(logoPath)) {
-      const globalAny = global as any;
-      if (globalAny.cachedLogoJpegBuffer) {
-        logoBuffer = globalAny.cachedLogoJpegBuffer;
-      } else {
-        const cmd = `node -e "require('sharp')('${logoPath.replace(/\\/g, '\\\\')}').flatten({ background: '#9BED58' }).jpeg({ quality: 95 }).toBuffer().then(b => console.log(b.toString('base64')))"`;
-        const jpegBase64 = execSync(cmd, { maxBuffer: 1024 * 1024 * 10 }).toString().trim();
-        logoBuffer = Buffer.from(jpegBase64, 'base64');
-        globalAny.cachedLogoJpegBuffer = logoBuffer;
-      }
-    }
-  } catch (e) {
-    console.warn("Could not convert logo.png to PDF JPEG buffer synchronously:", e);
-  }
   
   const pagesData: { shapes: string[], textLines: { text: string, x: number, y: number, font: 'F1' | 'F2', size: number, r: number, g: number, b: number }[] }[] = [];
   
@@ -881,16 +860,30 @@ export function generateBasicTextPdf(data: ReportData): Buffer {
 }
 
 export async function generatePdf(data: ReportData): Promise<Buffer> {
-  let logoBase64 = data.logoBase64;
-  if (!logoBase64) {
-    try {
-      const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo.png");
-      const logoData = fs.readFileSync(logoPath);
-      logoBase64 = `data:image/jpeg;base64,${logoData.toString("base64")}`;
-      data.logoBase64 = logoBase64;
-    } catch (e) {
-      Logger.warn(`Could not load fallback logo: ${e}`);
+  let logoBuffer: Buffer | null = null;
+  try {
+    const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo.png");
+    if (fs.existsSync(logoPath)) {
+      const globalAny = global as any;
+      if (globalAny.cachedLogoJpegBuffer) {
+        logoBuffer = globalAny.cachedLogoJpegBuffer;
+      } else {
+        const sharp = require('sharp');
+        logoBuffer = await sharp(logoPath)
+          .flatten({ background: '#9BED58' })
+          .jpeg({ quality: 95 })
+          .toBuffer();
+        globalAny.cachedLogoJpegBuffer = logoBuffer;
+      }
     }
+  } catch (e) {
+    Logger.warn(`Could not convert logo.png asynchronously: ${e}`);
+  }
+
+  let logoBase64 = data.logoBase64;
+  if (!logoBase64 && logoBuffer) {
+    logoBase64 = `data:image/jpeg;base64,${logoBuffer.toString("base64")}`;
+    data.logoBase64 = logoBase64;
   }
   
   let browser;
@@ -924,7 +917,7 @@ export async function generatePdf(data: ReportData): Promise<Buffer> {
   } catch (error: unknown) {
     Logger.error(`[pdf-generator] Puppeteer generation failed, falling back to basic text PDF. Error: ${error}`);
     try {
-      return generateBasicTextPdf(data);
+      return generateBasicTextPdf(data, logoBuffer);
     } catch (fallbackError) {
       Logger.error(`[pdf-generator] Fallback PDF generation also failed: ${fallbackError}`);
       throw fallbackError;
