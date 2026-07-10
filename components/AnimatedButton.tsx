@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { RollingText } from "./RollingText";
+import { MagneticWrapper } from "./MagneticWrapper";
 
 interface AnimatedButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
@@ -23,16 +24,18 @@ export function AnimatedButton({ text, icon, variant = "primary", className = ""
   }
 
   return (
-    <button
-      className={`group px-5 py-2.5 text-sm font-bold rounded-lg transition-colors inline-flex items-center gap-2 ${variantClasses} ${className}`}
-      {...props}
-    >
-      <RollingText text={text} />
-      {icon && (
-        <span className="transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-x-1 group-hover:-translate-y-1">
-          {icon}
-        </span>
-      )}
-    </button>
+    <MagneticWrapper>
+      <button
+        className={`group px-5 py-2.5 text-sm font-bold rounded-lg transition-colors inline-flex items-center gap-2 ${variantClasses} ${className}`}
+        {...props}
+      >
+        <RollingText text={text} />
+        {icon && (
+          <span className="block transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-x-1 group-hover:-translate-y-1">
+            {icon}
+          </span>
+        )}
+      </button>
+    </MagneticWrapper>
   );
 }

@@ -2,6 +2,7 @@
 import React from "react";
 import Link, { LinkProps } from "next/link";
 import { RollingText } from "./RollingText";
+import { MagneticWrapper } from "./MagneticWrapper";
 
 interface AnimatedLinkProps extends LinkProps {
   text: string;
@@ -28,16 +29,18 @@ export function AnimatedLink({ text, icon, variant = "primary", className = "", 
   }
 
   return (
-    <Link
-      className={`group text-sm font-bold transition-colors inline-flex items-center gap-2 ${variantClasses} ${className}`}
-      {...props}
-    >
-      <RollingText text={text} />
-      {icon && (
-        <span className="transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-x-1 group-hover:-translate-y-1">
-          {icon}
-        </span>
-      )}
-    </Link>
+    <MagneticWrapper>
+      <Link
+        className={`group text-sm font-bold transition-colors inline-flex items-center gap-2 ${variantClasses} ${className}`}
+        {...props}
+      >
+        <RollingText text={text} />
+        {icon && (
+          <span className="block transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-x-1 group-hover:-translate-y-1">
+            {icon}
+          </span>
+        )}
+      </Link>
+    </MagneticWrapper>
   );
 }

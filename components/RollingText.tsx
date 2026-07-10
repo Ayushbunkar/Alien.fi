@@ -8,11 +8,11 @@ interface RollingTextProps {
 
 export function RollingText({ text, className = "" }: RollingTextProps) {
   return (
-    <span className={`relative overflow-hidden inline-flex flex-col ${className}`}>
-      <span className="transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-full">
+    <span className={`relative overflow-hidden block ${className}`}>
+      <span className="block transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-full">
         {text}
       </span>
-      <span className="absolute top-full left-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-full" aria-hidden="true">
+      <span className="block absolute top-full left-0 w-full text-center transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-full" aria-hidden="true">
         {text}
       </span>
     </span>
