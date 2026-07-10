@@ -23,7 +23,7 @@ export function PdfButton({ submissionId }: PdfButtonProps) {
 
       const opt = {
         margin:      0,
-        filename:    `Pixel-Punch-Cost-Audit-${submissionId?.slice(0, 8) ?? "report"}.pdf`,
+        filename:    `Alien-fi-Cost-Audit-${submissionId?.slice(0, 8) ?? "report"}.pdf`,
         image:       { type: "jpeg" as const, quality: 0.98 },
         html2canvas: {
           scale:       2,

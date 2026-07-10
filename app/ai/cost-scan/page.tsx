@@ -28,7 +28,7 @@ export default function AiCostScanPage() {
       >
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-            <Image src="/assets/logo/logo-transparent.png" alt="Alien.fi" width={120} height={36} className="h-9 w-auto object-contain" style={{ filter: 'invert(1) contrast(1000%)', mixBlendMode: 'multiply' }} />
+            <Image src="/assets/logo/logo.jpg" alt="Alien.fi" width={120} height={36} className="h-9 w-auto object-contain" />
           </a>
           <a
             href="https://alien.fi/services/"
