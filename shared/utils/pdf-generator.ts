@@ -22,13 +22,13 @@ export function getTierStyles(tier: number) {
 
 export async function loadLogoBase64(): Promise<string> {
   try {
-    const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logomain.png");
+    const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo.jpg");
     if (fs.existsSync(logoPath)) {
       const logoData = fs.readFileSync(logoPath);
-      return `data:image/png;base64,${logoData.toString("base64")}`;
+      return `data:image/jpeg;base64,${logoData.toString("base64")}`;
     }
   } catch (err) {
-    console.warn("[pdf-generator] Could not load logomain.png, using placeholder");
+    console.warn("[pdf-generator] Could not load logo.jpg, using placeholder");
   }
     return "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 }
@@ -82,7 +82,7 @@ export function generateBasicTextPdf(data: ReportData): Buffer {
     currentPage.shapes.push(`0.59 0.93 0.32 rg\n0 790 595.28 52 re f`); 
     
     if (logoBuffer) {
-      currentPage.shapes.push(`q 73 0 0 32 30 800 cm /Im1 Do Q`);
+      currentPage.shapes.push(`q 126 0 0 36 30 798 cm /Im1 Do Q`);
     } else {
       currentPage.textLines.push({ text: "Alien", x: 30, y: 810, font: 'F2', size: 18, r: 0.08, g: 0.09, b: 0.17 });
     }
@@ -752,7 +752,7 @@ export function generateBasicTextPdf(data: ReportData): Buffer {
     objects.push({
       id: logoObjId,
       data: Buffer.concat([
-        Buffer.from(`<< /Type /XObject /Subtype /Image /Width 1280 /Height 562 /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${logoBuffer.length} >>\nstream\n`),
+        Buffer.from(`<< /Type /XObject /Subtype /Image /Width 1400 /Height 400 /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${logoBuffer.length} >>\nstream\n`),
         logoBuffer,
         Buffer.from(`\nendstream`)
       ])
@@ -867,9 +867,9 @@ export async function generatePdf(data: ReportData): Promise<Buffer> {
   let logoBase64 = data.logoBase64;
   if (!logoBase64) {
     try {
-      const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logomain.png");
+      const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo.jpg");
       const logoData = fs.readFileSync(logoPath);
-      logoBase64 = `data:image/png;base64,${logoData.toString("base64")}`;
+      logoBase64 = `data:image/jpeg;base64,${logoData.toString("base64")}`;
       data.logoBase64 = logoBase64;
     } catch (e) {
       Logger.warn(`Could not load fallback logo: ${e}`);
