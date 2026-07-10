@@ -22,13 +22,13 @@ export function getTierStyles(tier: number) {
 
 export async function loadLogoBase64(): Promise<string> {
   try {
-    const logoPath = path.join(process.cwd(), "public", "logo.jpg");
+    const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logomain.png");
     if (fs.existsSync(logoPath)) {
       const logoData = fs.readFileSync(logoPath);
-      return `data:image/jpeg;base64,${logoData.toString("base64")}`;
+      return `data:image/png;base64,${logoData.toString("base64")}`;
     }
   } catch (err) {
-    console.warn("[pdf-generator] Could not load logo.jpg, using placeholder");
+    console.warn("[pdf-generator] Could not load logomain.png, using placeholder");
   }
     return "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 }
@@ -867,9 +867,9 @@ export async function generatePdf(data: ReportData): Promise<Buffer> {
   let logoBase64 = data.logoBase64;
   if (!logoBase64) {
     try {
-      const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo-pdf-optimized.jpg");
+      const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logomain.png");
       const logoData = fs.readFileSync(logoPath);
-      logoBase64 = `data:image/jpeg;base64,${logoData.toString("base64")}`;
+      logoBase64 = `data:image/png;base64,${logoData.toString("base64")}`;
       data.logoBase64 = logoBase64;
     } catch (e) {
       Logger.warn(`Could not load fallback logo: ${e}`);

@@ -168,7 +168,7 @@ export default function ResultsPageContent() {
        >
          <div className="max-w-4xl mx-auto flex items-center justify-between">
            <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-             <Image src="/logo.jpg" alt="Alien.fi" width={100} height={30} className="h-7 w-auto object-contain" />
+             <Image src="/assets/logo/logo-with-font.svg" alt="Alien.fi" width={100} height={30} className="h-7 w-auto object-contain" />
            </a>
            <button
              onClick={() => router.push("/ai/cost-scan")}
