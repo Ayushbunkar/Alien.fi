@@ -123,7 +123,7 @@ export default function ResultPage() {
       >
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-            <Image src="/assets/logo/logo-transparent.png" alt="Alien.fi" width={100} height={30} className="h-7 w-auto object-contain" />
+            <Image src="/assets/logo/logo-transparent.png" alt="Alien.fi" width={100} height={30} className="h-7 w-auto object-contain" style={{ filter: 'invert(1) contrast(1000%)', mixBlendMode: 'multiply' }} />
           </a>
           <button
             onClick={() => router.back()}
