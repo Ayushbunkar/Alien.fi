@@ -603,7 +603,7 @@ function Header() {
         <div className="flex items-center justify-between h-[70px]">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <img src="/assets/logo/logo.jpg" alt="Alien.fi" className="h-6 w-auto object-contain transition-transform duration-300 hover:scale-105 cursor-pointer" />
+            <img src="/assets/logo/logo.jpg" alt="Alien.fi" className="h-12 w-auto object-contain transition-transform duration-300 hover:scale-105 cursor-pointer" style={{ mixBlendMode: 'multiply' }} />
           </a>
 
           {/* Nav Links */}

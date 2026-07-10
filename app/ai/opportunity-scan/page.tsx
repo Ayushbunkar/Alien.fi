@@ -39,7 +39,7 @@ export default async function AiOpportunityScanPage({ searchParams }: PageProps)
       >
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-            <Image src="/assets/logo/logo.jpg" alt="Alien.fi" width={120} height={36} className="h-9 w-auto object-contain" />
+            <Image src="/assets/logo/logo.jpg" alt="Alien.fi" width={160} height={48} className="h-12 w-auto object-contain" style={{ mixBlendMode: 'multiply' }} />
           </a>
           <a
             href="https://alien.fi/services/"
