@@ -74,9 +74,9 @@ export function generateBasicTextPdf(data: ReportData): Buffer {
     currentPage = { shapes: [], textLines: [] };
     currentY = 720; // Added more space below header
     
-    // Decorative background circles (very light blue) on the right side
-    currentPage.shapes.push(`0.90 0.94 1.0 rg\n${roundedRectPath(300, 450, 350, 350, 175)} f`); // Large circle
-    currentPage.shapes.push(`0.82 0.89 0.99 rg\n${roundedRectPath(450, 350, 200, 200, 100)} f`); // Small circle
+    // Decorative background circles (very light green) on the right side
+    currentPage.shapes.push(`0.94 1.0 0.94 rg\n${roundedRectPath(300, 450, 350, 350, 175)} f`); // Large circle
+    currentPage.shapes.push(`0.88 0.98 0.88 rg\n${roundedRectPath(450, 350, 200, 200, 100)} f`); // Small circle
     
     // Background header bar in #96EE52 (R:0.59, G:0.93, B:0.32)
     currentPage.shapes.push(`0.59 0.93 0.32 rg\n0 790 595.28 52 re f`); 
@@ -84,7 +84,8 @@ export function generateBasicTextPdf(data: ReportData): Buffer {
     if (logoBuffer) {
       currentPage.shapes.push(`q 126 0 0 36 30 798 cm /Im1 Do Q`);
     } else {
-      currentPage.textLines.push({ text: "Alien", x: 30, y: 810, font: 'F2', size: 18, r: 0.08, g: 0.09, b: 0.17 });
+      currentPage.textLines.push({ text: "Alien", x: 30, y: 810, font: 'F2', size: 22, r: 0.08, g: 0.09, b: 0.17 });
+      currentPage.textLines.push({ text: ".fi", x: 88, y: 810, font: 'F2', size: 22, r: 0.13, g: 0.77, b: 0.36 });
     }
     
     const subtitle = data.reportType === "cost" ? "AI COST AUDIT REPORT" : "AI OPPORTUNITY AUDIT REPORT";
@@ -889,9 +890,13 @@ export async function generatePdf(data: ReportData): Promise<Buffer> {
     const pdf = await page.pdf({
       format: "A4",
       printBackground: true,
-      margin: { top: "20mm", right: "20mm", bottom: "20mm", left: "20mm" },
+      margin: { top: "30mm", right: "20mm", bottom: "20mm", left: "20mm" },
       displayHeaderFooter: true,
-      headerTemplate: '<span></span>',
+      headerTemplate: `
+        <div style="width:100%; display:flex; align-items:flex-end; padding:0 20mm; margin-top:10mm;">
+          ${logoBase64 ? `<img src="${logoBase64}" style="height:35px; object-fit:contain;" />` : `<span style="font-size:16px; font-weight:bold; color:#15182B; font-family:sans-serif;">Alien.fi</span>`}
+        </div>
+      `,
       footerTemplate: `
         <div style="font-size:8px; font-family:'Courier New', monospace; color:#15182B; text-align:center; width:100%; letter-spacing:1px; margin-bottom:10mm; opacity:0.6;">
           CONFIDENTIAL | ALIEN AI AUDIT | PAGE <span class="pageNumber"></span> OF <span class="totalPages"></span>
