@@ -600,10 +600,10 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-[#9BED58] border-b border-black/10">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-between h-[70px]">
-          <a href="/" className="flex items-center hover:opacity-90 transition-opacity">
-            <BrandLogo size={60} showText={false} />
+      <div className="max-w-[1400px] mx-auto px-6">
+        <div className="flex items-center justify-between h-[85px]">
+          <a href="/" className="flex items-end h-full pb-1 hover:opacity-90 transition-opacity">
+            <BrandLogo size={75} showText={false} />
           </a>
 
           {/* Nav Links */}
