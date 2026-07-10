@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://pixelpunch.org/schemas/opportunity-scan-v1.json",
+  "$id": "https://Alien.fi.org/schemas/opportunity-scan-v1.json",
   "title": "AI Opportunity Scan — Questionnaire Submission Schema",
-  "description": "Schema definition for the Pixel Punch AI Opportunity Scan form. Used by frontend form validation and backend API validation.",
+  "description": "Schema definition for the Alien.fi Opportunity Scan form. Used by frontend form validation and backend API validation.",
   "type": "object",
   "required": [
     "business_type",

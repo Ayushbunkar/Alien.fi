@@ -427,7 +427,6 @@ function AuditCards() {
             href="/ai/opportunity-scan"
             className="group block glass-card p-10 hover:bg-white transition-all duration-300 relative overflow-hidden text-left border-[#15182B]"
           >
-            <div className="absolute top-0 right-0 w-full h-2 bg-[#15182B]" />
             <div className="w-16 h-16 rounded-xl bg-transparent border-2 border-[#15182B] flex items-center justify-center mb-8">
               <Sparkles className="w-8 h-8 text-[#15182B]" />
             </div>
@@ -604,7 +603,7 @@ function Header() {
         <div className="flex items-center justify-between h-[60px]">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <img src="/assets/logo/logo-with-font.svg" alt="Alien" className="h-5 w-auto object-contain" />
+            <img src="/assets/logo/logo-with-font.svg" alt="Alien.fi" className="h-5 w-auto object-contain transition-transform duration-300 hover:scale-105 cursor-pointer" />
           </a>
 
           {/* Nav Links */}

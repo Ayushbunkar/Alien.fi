@@ -57,7 +57,7 @@ const TC_TIER4_DISQ: FormState = {
   ref: "op-landing",
 };
 
-console.log("\n=== Pixel Punch AI Opportunity Audit — Lead Qualifier Unit Tests ===\n");
+console.log("\n=== Alien.fi Opportunity Audit — Lead Qualifier Unit Tests ===\n");
 
 // Tier 1 Qualification Test
 const score1 = calculateLeadScore(TC_TIER1_SQL);

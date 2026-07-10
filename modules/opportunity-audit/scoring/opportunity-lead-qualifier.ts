@@ -1,5 +1,5 @@
 // =============================================================================
-// Pixel Punch — AI Opportunity Audit · Sales Intelligence Lead Qualifier
+// Alien.fi — AI Opportunity Audit · Sales Intelligence Lead Qualifier
 // Scoring formulas, rulesets, and CRM-ready payloads.
 // =============================================================================
 

@@ -233,7 +233,7 @@ export const PdfReportTemplate: React.FC<Props> = ({ data, reportType = "cost" }
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "12px", marginBottom: "14px" }}>
             <div>
               <p style={{ margin: 0, fontSize: "11px", fontWeight: 700, color: "#475569", letterSpacing: "0.6px", textTransform: "uppercase" }}>
-                Pixel Punch Diagnostics
+                Alien.fi Diagnostics
               </p>
               <h1 style={{ margin: "6px 0 4px", fontSize: "22px", lineHeight: 1.25, fontWeight: 800, color: "#0f172a" }}>{reportTitle}</h1>
               <p style={{ margin: 0, fontSize: "12px", color: "#64748b", lineHeight: 1.4 }}>{reportSubtitle}</p>

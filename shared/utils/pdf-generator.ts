@@ -514,7 +514,7 @@ export function generateBasicTextPdf(data: ReportData): Buffer {
   } else if (data.reportType === "opportunity") {
     const drawContainer = (title: string, heightNeeded: number, drawContent: () => void) => {
        checkSpace(heightNeeded);
-       const boxTop = currentY;
+       const boxTop = currentY + 10;
        drawText(title, 40, 'F2', 14, 0.06, 0.09, 0.16);
        currentY -= 20;
        drawContent();
@@ -793,6 +793,13 @@ export function generateBasicTextPdf(data: ReportData): Buffer {
       }
       
       let escapedLine = line.text
+        .replace(/≥/g, ">=")
+        .replace(/—/g, "-")
+        .replace(/–/g, "-")
+        .replace(/“/g, '"')
+        .replace(/”/g, '"')
+        .replace(/‘/g, "'")
+        .replace(/’/g, "'")
         .replace(/\\/g, "\\\\")
         .replace(/\(/g, "\\(")
         .replace(/\)/g, "\\)");

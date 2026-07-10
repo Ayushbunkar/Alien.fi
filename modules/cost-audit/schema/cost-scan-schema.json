@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://pixelpunch.org/schemas/cost-scan-v1.json",
+  "$id": "https://Alien.fi.org/schemas/cost-scan-v1.json",
   "title": "AI Cost Scan — Questionnaire Submission Schema",
-  "description": "Single source of truth for the Pixel Punch AI Cost Scan form. Used by frontend form validation and backend API validation. Does not contain scoring logic, Brevo integration, or frontend code.",
+  "description": "Single source of truth for the Alien.fi Cost Scan form. Used by frontend form validation and backend API validation. Does not contain scoring logic, Brevo integration, or frontend code.",
   "type": "object",
   "required": [
     "ai_dependence",

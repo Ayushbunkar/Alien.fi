@@ -220,7 +220,7 @@ export function renderReportToHtml(report: ReportData, options: { mode: "web" | 
       <div class="cover-logo">
         ${report.logoBase64
           ? `<img src="${report.logoBase64}" alt="Alien" />`
-          : `<span>ALIEN</span>`
+          : `<span style="color: #22c55e; font-weight: bold;">Alien.fi</span>`
         }
       </div>
       <div class="cover-type">

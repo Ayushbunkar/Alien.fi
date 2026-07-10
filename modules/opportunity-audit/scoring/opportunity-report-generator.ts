@@ -1,5 +1,5 @@
 // =============================================================================
-// Pixel Punch — AI Opportunity Audit · Report Generator
+// Alien.fi — AI Opportunity Audit · Report Generator
 // Generates detailed Markdown reports based on inputs, scores, and recommendations.
 // =============================================================================
 
@@ -28,7 +28,7 @@ export function buildReportPrompt(
     .map((r, i) => `${i + 1}. ${r.opportunity} (Problem: ${r.problem} | Priority: ${r.priority})`)
     .join("\n");
 
-  return `You are a senior AI Systems Architect and Lead Consultant at PixelPunch.
+  return `You are a senior AI Systems Architect and Lead Consultant at Alien.fi.
 Your task is to analyze the client's operational context, systems, data, and calculated scores, and write a premium, detailed AI Opportunity Audit & Roadmap Report.
 
 Here is the context provided about the client's business:
@@ -92,7 +92,7 @@ The report must include the following structure and semantic HTML tags (do NOT w
   </ul>
 
   <h3>Recommended Next Steps</h3>
-  <p>Provide a list of 3 actionable next steps for the client to proceed with PixelPunch (e.g. Schedule an API architecture review, map SOPs).</p>
+  <p>Provide a list of 3 actionable next steps for the client to proceed with Alien.fi (e.g. Schedule an API architecture review, map SOPs).</p>
 
   <h3>Key Findings</h3>
   <ul>
@@ -164,7 +164,7 @@ export function generateFallbackReport(
   <ol>
     <li>Map and document the exact step-by-step logic of your highest-frequency manual process.</li>
     <li>Establish API connections between your CRM and spreadsheets to eliminate copy-paste silos.</li>
-    <li>Schedule an AI Architecture Review with the PixelPunch team to outline integration requirements.</li>
+    <li>Schedule an AI Architecture Review with the Alien.fi team to outline integration requirements.</li>
   </ol>
 
   <h3>Key Findings</h3>

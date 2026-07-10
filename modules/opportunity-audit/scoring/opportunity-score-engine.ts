@@ -1,5 +1,5 @@
 // =============================================================================
-// Pixel Punch — AI Opportunity Audit · Scoring Engine
+// Alien.fi — AI Opportunity Audit · Scoring Engine
 // Pure functions and dynamic JSON config evaluation.
 // =============================================================================
 

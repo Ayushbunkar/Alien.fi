@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// Pixel Punch — AI Opportunity Scan · Types
+// Alien.fi — AI Opportunity Scan · Types
 // Mirrors opportunity-schema.json exactly.
 // ─────────────────────────────────────────────────────────────────────────────
 

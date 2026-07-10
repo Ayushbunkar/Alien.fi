@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// Pixel Punch — AI Cost Scan · Shared Types
+// Alien.fi — AI Cost Scan · Shared Types
 // Mirrors cost-scan-schema.json exactly.
 // Frontend NEVER computes tier or insights — all intelligence is backend-only.
 // ─────────────────────────────────────────────────────────────────────────────

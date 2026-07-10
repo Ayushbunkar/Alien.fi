@@ -1,5 +1,5 @@
 // =============================================================================
-// Pixel Punch — AI Cost Scan · Scoring Engine
+// Alien.fi — AI Cost Scan · Scoring Engine
 // =============================================================================
 
 // ---------------------------------------------------------------------------
@@ -364,7 +364,7 @@ const TC6_TIER2_LIMITED_PILOTS: FormInput = {
 
 /** TC-7: worstOf edge cases */
 
-console.log("\n=== Pixel Punch AI Cost Scan — Scoring Engine Unit Tests ===\n");
+console.log("\n=== Alien.fi Cost Scan — Scoring Engine Unit Tests ===\n");
 
 // --- worstOf ---
 console.log("--- worstOf ---");

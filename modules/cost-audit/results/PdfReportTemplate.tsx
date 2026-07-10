@@ -134,7 +134,7 @@ export const PdfReportTemplate: React.FC<Props> = ({ result }) => {
             
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                <img src="/logo.jpg" alt="Pixel Punch" style={{ height: "36px", width: "auto", objectFit: "contain" }} />
+                <img src="/logo.jpg" alt="Alien.fi" style={{ height: "36px", width: "auto", objectFit: "contain" }} />
                 <div style={{ height: "24px", width: "1px", backgroundColor: "#e2e8f0", margin: "0 4px" }} />
                 <div>
                   <p style={{ margin: 0, fontSize: "11px", fontWeight: "600", color: "#475569", textTransform: "uppercase", letterSpacing: "0.5px" }}>AI Cost Architecture Diagnostics</p>
@@ -280,13 +280,13 @@ export const PdfReportTemplate: React.FC<Props> = ({ result }) => {
 
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <img src="/logo.jpg" alt="Pixel Punch" style={{ height: "24px", width: "auto", objectFit: "contain" }} />
+                <img src="/logo.jpg" alt="Alien.fi" style={{ height: "24px", width: "auto", objectFit: "contain" }} />
                 <div style={{ height: "16px", width: "1px", backgroundColor: "#e2e8f0", margin: "0 4px" }} />
-                <p style={{ margin: 0, fontSize: "10px", color: "#94a3b8" }}>contact@pixelpunch.org • +1 (657) 200-1336</p>
+                <p style={{ margin: 0, fontSize: "10px", color: "#94a3b8" }}>contact@Alien.fi.org • +1 (657) 200-1336</p>
               </div>
               <div style={{ textAlign: "right" }}>
-                <p style={{ margin: "0 0 1px 0", fontSize: "10px", color: "#94a3b8" }}>pixelpunch.org</p>
-                <p style={{ margin: 0, fontSize: "10px", color: "#cbd5e1" }}>© {new Date().getFullYear()} Pixel Punch. All rights reserved.</p>
+                <p style={{ margin: "0 0 1px 0", fontSize: "10px", color: "#94a3b8" }}>Alien.fi.org</p>
+                <p style={{ margin: 0, fontSize: "10px", color: "#cbd5e1" }}>© {new Date().getFullYear()} Alien.fi. All rights reserved.</p>
               </div>
             </div>
 
@@ -304,7 +304,7 @@ export const PdfReportTemplate: React.FC<Props> = ({ result }) => {
               
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <img src="/logo.jpg" alt="Pixel Punch" style={{ height: "28px", width: "auto", objectFit: "contain" }} />
+                  <img src="/logo.jpg" alt="Alien.fi" style={{ height: "28px", width: "auto", objectFit: "contain" }} />
                   <div style={{ height: "18px", width: "1px", backgroundColor: "#e2e8f0", margin: "0 4px" }} />
                   <span style={{ fontSize: "10px", fontWeight: "750", color: "#334155", textTransform: "uppercase", letterSpacing: "0.5px" }}>Cost Audit Report</span>
                 </div>
@@ -363,11 +363,11 @@ export const PdfReportTemplate: React.FC<Props> = ({ result }) => {
 
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <img src="/logo.jpg" alt="Pixel Punch" style={{ height: "20px", width: "auto", objectFit: "contain" }} />
+                  <img src="/logo.jpg" alt="Alien.fi" style={{ height: "20px", width: "auto", objectFit: "contain" }} />
                   <p style={{ margin: 0, fontSize: "9px", color: "#94a3b8" }}>Ref: #{result.submissionId.slice(0, 8).toUpperCase()} • Detailed AI Cost Audit</p>
                 </div>
                 <div style={{ textAlign: "right" }}>
-                  <p style={{ margin: 0, fontSize: "9px", color: "#cbd5e1" }}>© {new Date().getFullYear()} Pixel Punch.</p>
+                  <p style={{ margin: 0, fontSize: "9px", color: "#cbd5e1" }}>© {new Date().getFullYear()} Alien.fi.</p>
                 </div>
               </div>
 

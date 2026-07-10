@@ -1,4 +1,4 @@
-# AI Audit Gated Report Strategy - Pixel Punch
+# AI Audit Gated Report Strategy - Alien.fi
 
 ## Executive Summary
 
@@ -415,4 +415,4 @@ The current report pages display all insights freely, with only an "Email Report
 
 *Document Version: 1.0*
 *Last Updated: June 2026*
-*Prepared by: Pixel Punch AI Team*
+*Prepared by: Alien.fi Team*

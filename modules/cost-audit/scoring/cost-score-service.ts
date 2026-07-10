@@ -49,7 +49,7 @@ export function runScoring(input: FormState): ScoreOutput {
 
 /** CTA URLs by tier */
 export function getCTAUrl(tier: 1 | 2 | 3 | 4): string {
-  if (tier === 1 || tier === 2) return "https://pixelpunch.org/ai?ref=co-scan-book";
-  if (tier === 3)               return "https://pixelpunch.org/content/cost-optimization";
-  return                               "https://pixelpunch.org/ai/cost-scan/learn";
+  if (tier === 1 || tier === 2) return "https://Alien.fi.org/ai?ref=co-scan-book";
+  if (tier === 3)               return "https://Alien.fi.org/content/cost-optimization";
+  return                               "https://Alien.fi.org/ai/cost-scan/learn";
 }

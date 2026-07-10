@@ -33,7 +33,7 @@ const TEST_INPUT: FormState = {
   ref: "op-landing",
 };
 
-console.log("\n=== Pixel Punch AI Opportunity Audit — Recommendation Engine Unit Tests ===\n");
+console.log("\n=== Alien.fi Opportunity Audit — Recommendation Engine Unit Tests ===\n");
 
 const scores = runConfigScoring(TEST_INPUT);
 

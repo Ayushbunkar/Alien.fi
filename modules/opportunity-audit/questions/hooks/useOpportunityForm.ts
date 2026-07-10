@@ -25,7 +25,7 @@ import {
 } from "../../types";
 
 const TOTAL_STEPS = 5;
-const STORAGE_KEY = "pixelpunch_opportunity_form_progress";
+const STORAGE_KEY = "Alien.fi_opportunity_form_progress";
 
 function validateStep(step: number, state: FormState): ValidationErrors {
   const errors: ValidationErrors = {};

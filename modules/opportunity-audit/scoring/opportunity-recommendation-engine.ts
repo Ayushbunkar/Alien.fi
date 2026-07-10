@@ -1,5 +1,5 @@
 // =============================================================================
-// Pixel Punch — AI Opportunity Audit · Recommendation Engine
+// Alien.fi — AI Opportunity Audit · Recommendation Engine
 // AI Consultant Persona & JSON-driven Recommendation Logic.
 // ==========================dfg===================================================
 
@@ -22,7 +22,7 @@ export function buildRecommendationPrompt(input: FormState, scores: ConfigScorin
   const dataSystemsStr = input.data_systems.join(", ") || "None";
   const manualProcessesStr = input.manual_processes.join(", ") || "None";
 
-  return `You are a senior AI Systems Architect and Lead Consultant at PixelPunch.
+  return `You are a senior AI Systems Architect and Lead Consultant at Alien.fi.
 Your task is to analyze a client's assessment data and generate a list of the top 3-4 tailored AI and automation opportunities.
 
 Here is the context about the client's business:

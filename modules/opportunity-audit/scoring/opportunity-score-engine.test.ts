@@ -63,7 +63,7 @@ const TC2_CONSULTING_CANDIDATE: FormState = {
   ref: "op-landing",
 };
 
-console.log("\n=== Pixel Punch AI Opportunity Audit — Scoring Engine Unit Tests ===\n");
+console.log("\n=== Alien.fi Opportunity Audit — Scoring Engine Unit Tests ===\n");
 
 // --- scoreReadiness ---
 console.log("--- scoreReadiness ---");

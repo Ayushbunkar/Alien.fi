@@ -119,7 +119,7 @@ export function EmailModal({ isOpen, onClose, submissionId, scanType, onSuccess,
         ) : (
           <div className="space-y-6">
             <div className="flex gap-4 items-start">
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#96EE52] border border-blue-100 flex items-center justify-center shadow-sm flex-shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-[#96EE52]/10 text-[#96EE52] border border-[#96EE52]/30 flex items-center justify-center shadow-sm flex-shrink-0">
                 <Mail className="w-6 h-6" />
               </div>
               <div className="space-y-1">
@@ -159,7 +159,7 @@ export function EmailModal({ isOpen, onClose, submissionId, scanType, onSuccess,
                 <button
                   type="submit"
                   disabled={loading || !email.trim() || !email.includes("@")}
-                  className="px-5 py-2.5 bg-[#96EE52] hover:bg-[#85DC45] disabled:bg-slate-250 text-white rounded-lg font-bold text-sm flex items-center gap-1.5 transition-colors shadow-sm disabled:cursor-not-allowed"
+                  className="px-5 py-2.5 bg-[#96EE52] hover:bg-[#85DC45] disabled:bg-slate-200 text-[#15182B] rounded-lg font-bold text-sm flex items-center gap-1.5 transition-colors shadow-sm disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <>

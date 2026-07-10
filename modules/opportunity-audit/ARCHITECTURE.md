@@ -1,6 +1,6 @@
 # AI Opportunity Audit — Production SaaS Architecture Blueprint
 
-This blueprint outlines the complete production-grade SaaS architecture for the **AI Opportunity Audit** platform built for PixelPunch.
+This blueprint outlines the complete production-grade SaaS architecture for the **AI Opportunity Audit** platform built for Alien.fi.
 
 ---
 

@@ -29,8 +29,8 @@ function replaceInFile(filePath) {
     let modified = false;
 
     const replacements = [
-        { regex: /Pixel Punch/g, text: 'Alien' },
-        { regex: /PixelPunch/g, text: 'Alien' },
+        { regex: /Alien.fi/g, text: 'Alien' },
+        { regex: /Alien.fi/g, text: 'Alien' },
         { regex: /pixel-punch/g, text: 'alien' },
         { regex: /pixel punch/gi, text: 'Alien' },
         { regex: /Pixel\sPunch/g, text: 'Alien' }

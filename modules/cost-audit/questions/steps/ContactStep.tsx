@@ -104,7 +104,7 @@ export function ContactStep({ state, errors, onChange, loading, submitError }: C
       )}
 
       <p className="mt-5 text-xs text-slate-500 leading-relaxed">
-        By submitting you agree to Pixel Punch&apos;s{" "}
+        By submitting you agree to Alien.fi&apos;s{" "}
         <a href="/privacy" className="underline hover:text-slate-900 transition-colors">
           privacy policy
         </a>

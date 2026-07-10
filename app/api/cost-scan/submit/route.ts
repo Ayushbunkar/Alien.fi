@@ -392,33 +392,7 @@ export async function POST(req: NextRequest) {
 
     const baseUrl = getBaseUrl(req);
 
-    // Send Telegram notification to team (only if user provided their email address)
-    if (telegramChatIdTeam && userEmail) {
-      const isOpportunity = body.scanType === "opportunity";
-      const reportName = isOpportunity ? "Opportunity Scan" : "Cost Scan";
-      const reportPath = isOpportunity ? `result/opportunity?id=${submissionId}&unlock=true` : `ai/cost-scan/results?id=${submissionId}&unlock=true`;
 
-      const emailDisplay = `(<a href="mailto:${userEmail}">${userEmail}</a>)`;
-      const nameDisplay = (castedInput.firstname || castedInput.lastname) ? `${castedInput.firstname || ''} ${castedInput.lastname || ''}`.trim() : "Anonymous";
-
-      const telegramMessage = `🚨 <b>New ${reportName} Submission!</b>
- 
-<b>Submission ID:</b> <code>${submissionId}</code>
-<b>Company:</b> ${castedInput.company || "N/A"}
-<b>Contact:</b> ${nameDisplay} ${emailDisplay}
-<b>Tier:</b> ${scores.tier}
- 
-<a href="${baseUrl}/${reportPath}">➡️ View Full Technical Audit Report</a>`;
-      try {
-        const res = await notificationService.sendNotification("telegram_team", {
-          message: telegramMessage,
-          chatId: telegramChatIdTeam,
-        });
-        console.log("[Cost Submit API] Telegram notification result:", res);
-      } catch (err) {
-        console.error("[Cost Submit API] Error sending Telegram notification:", err);
-      }
-    }
  
     return NextResponse.json(
       { success: true, submissionId, redirectUrl: `/ai/cost-scan/results?id=${submissionId}` },

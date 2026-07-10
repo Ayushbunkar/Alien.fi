@@ -259,29 +259,7 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // Send Telegram notification to team (only if user provided their email address)
-    if (telegramChatIdTeam && userEmail) {
-      const emailDisplay = `(<a href="mailto:${input.email}">${input.email}</a>)`;
-      const nameDisplay = (input.firstname || input.lastname) ? `${input.firstname || ''} ${input.lastname || ''}`.trim() : "Anonymous";
-      
-      const telegramMessage = `🚨 <b>New Opportunity Scan Submission!</b>
- 
-<b>Submission ID:</b> <code>${submissionId}</code>
-<b>Company:</b> ${input.company || "Not provided"}
-<b>Contact:</b> ${nameDisplay} ${emailDisplay}
-<b>Tier:</b> ${results.tier}
- 
-<a href="${baseUrl}/result/opportunity?id=${submissionId}&unlock=true">➡️ View Full Technical Audit Report</a>`;
-      try {
-        const res = await notificationService.sendNotification("telegram_team", {
-          message: telegramMessage,
-          chatId: telegramChatIdTeam,
-        });
-        Logger.info("[Opportunity Submit API] Telegram notification result:", res);
-      } catch (err) {
-        Logger.error("[Opportunity Submit API] Error sending Telegram notification:", err);
-      }
-    }
+
 
     return NextResponse.json(
       { success: true, submissionId, redirectUrl: `/result/opportunity?id=${submissionId}` },

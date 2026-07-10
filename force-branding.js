@@ -23,11 +23,11 @@ function scanAndReplace(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
     let original = content;
 
-    content = content.replace(/Pixel Punch AI/g, 'Alien');
-    content = content.replace(/Pixel Punch/g, 'Alien');
-    content = content.replace(/PixelPunch/g, 'Alien');
-    content = content.replace(/pixelpunch\.org/g, 'alien.fi');
-    content = content.replace(/pixelpunch/g, 'alien');
+    content = content.replace(/Alien.fi/g, 'Alien');
+    content = content.replace(/Alien.fi/g, 'Alien');
+    content = content.replace(/Alien.fi/g, 'Alien');
+    content = content.replace(/Alien.fi\.org/g, 'alien.fi');
+    content = content.replace(/Alien.fi/g, 'alien');
 
     if (content !== original) {
       fs.writeFileSync(filePath, content, 'utf8');

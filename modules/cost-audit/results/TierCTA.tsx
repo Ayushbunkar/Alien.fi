@@ -11,7 +11,7 @@ interface TierCTAProps {
 export function TierCTA({ url, label, tier }: TierCTAProps) {
   // Always send to contact page — override any passed url for tiers 1 & 2
   const href = tier <= 2
-    ? "https://pixelpunch.org/contact-us/"
+    ? "https://Alien.fi.org/contact-us/"
     : url;
 
   const styleClass = tier <= 2 ? "pp-btn-primary" : "pp-btn-ghost border border-slate-400 hover:border-slate-300 text-slate-100";

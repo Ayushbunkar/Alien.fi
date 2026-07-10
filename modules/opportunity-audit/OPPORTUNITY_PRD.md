@@ -1,17 +1,17 @@
 # Product Requirement Document (PRD): AI Opportunity Audit
 
-This document outlines the product requirements and technical architecture for the **AI Opportunity Audit** module of the PixelPunch AI Assessment Platform.
+This document outlines the product requirements and technical architecture for the **AI Opportunity Audit** module of the Alien.fi AI Assessment Platform.
 
 ---
 
 ## 1. System Goal & Value Proposition
 
-The AI Opportunity Audit is designed as a lead generation and consultative sales tool for PixelPunch. It targets highly engaged prospects (via email campaigns and organic traffic) to:
+The AI Opportunity Audit is designed as a lead generation and consultative sales tool for Alien.fi. It targets highly engaged prospects (via email campaigns and organic traffic) to:
 - Collect key business context, operational patterns, and technical readiness indicators.
 - Analyze processes to find bottlenecks and automation opportunities.
 - Calculate an **AI Readiness & Feasibility Score**.
 - Output a personalized **AI Opportunity Roadmap** mapping out immediate wins (Phase 1) and mid-to-long term AI initiatives (Phase 2 & 3).
-- Fast-track qualified leads (Tier 1 & 2) directly into PixelPunch's consulting pipeline.
+- Fast-track qualified leads (Tier 1 & 2) directly into Alien.fi's consulting pipeline.
 
 ---
 
@@ -128,7 +128,7 @@ The generated scorecard and PDF report will follow a clean, premium format:
    - **Phase 1: Quick Wins** (High Feasibility / High Value) - e.g., CRM automations.
    - **Phase 2: Core Enhancements** (Medium Feasibility / High Value) - e.g., RAG Knowledge Base.
    - **Phase 3: Strategic Transformations** (Low Feasibility / High Value) - e.g., Custom AI agents.
-5. **PixelPunch Call-to-Action**: Scoped next steps (e.g., "Request a Technical Architecture Deep Dive").
+5. **Alien.fi Call-to-Action**: Scoped next steps (e.g., "Request a Technical Architecture Deep Dive").
 
 ---
 
