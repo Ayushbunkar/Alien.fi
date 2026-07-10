@@ -4,8 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { BrandLogo } from "@/components/BrandLogo";
 
-import { ContactBar } from "@/shared/components/ContactBar";
-import * as motion from "framer-motion/client";
+import { Header } from "@/components/Header";
 import { slideUp, staggerContainer, fadeIn } from "@/shared/components/animations";
 
 import { ArrowLeft } from "lucide-react";
@@ -112,29 +111,7 @@ export default function ResultPage() {
 
   return (
     <main className="min-h-screen bg-[#fafbff] pb-12 overflow-x-hidden">
-      {/* Contact Bar */}
-      <ContactBar containerClassName="max-w-4xl" />
-
-      {/* Nav Strip */}
-      <motion.nav
-        variants={fadeIn}
-        initial="hidden"
-        animate="show"
-        className="border-b border-slate-200 px-4 py-3 bg-white/50 backdrop-blur-md"
-      >
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-            <BrandLogo size={32} showText={false} />
-          </a>
-          <button
-            onClick={() => router.back()}
-            className="flex items-center gap-1 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            Back
-          </button>
-        </div>
-      </motion.nav>
+      <Header />
 
       <motion.div
         variants={staggerContainer}

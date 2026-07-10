@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import { useSearchParams, useRouter } from "next/navigation";
 import { StoredScanResult } from "@/modules/opportunity-audit/types";
 import Image from "next/image";
-import { BrandLogo } from "@/components/BrandLogo";
+import { Header } from "@/components/Header";
 
 import { Cpu, Download, CheckCircle2 } from "lucide-react";
 import { RAG_META } from "@/shared/utils/rag-styles";
@@ -154,28 +154,7 @@ export default function OpportunityResultsContent() {
    return (
      <Fragment>
        <main className="min-h-screen bg-[#fafbff] bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px] pb-12 overflow-x-hidden">
-       {/* Contact Bar */}
-       <ContactBar containerClassName="max-w-4xl" />
-
-       {/* Nav Strip */}
-       <motion.nav 
-         variants={fadeIn} 
-         initial="hidden" 
-         animate="show"
-          className="px-4 py-3"
-       >
-         <div className="max-w-4xl mx-auto flex items-center justify-between">
-           <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-             <BrandLogo size={32} showText={false} />
-           </a>
-           <button
-             onClick={() => router.push("/ai/opportunity-scan")}
-             className="flex items-center gap-1 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors"
-           >
-             New Scan
-           </button>
-         </div>
-       </motion.nav>
+       <Header />
 
        <motion.div 
          variants={staggerContainer}

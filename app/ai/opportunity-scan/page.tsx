@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import Image from "next/image";
 import { OpportunityWizard } from "@/modules/opportunity-audit/questions/OpportunityWizard";
-import { BrandLogo } from "@/components/BrandLogo";
-import { ContactBar } from "@/shared/components/ContactBar";
+import { Header } from "@/components/Header";
 import { Target, Lightbulb, ClipboardList } from "lucide-react";
 import * as motion from "framer-motion/client";
 import { slideUp, staggerContainer, fadeIn } from "@/shared/components/animations";
@@ -30,28 +29,7 @@ export default async function AiOpportunityScanPage({ searchParams }: PageProps)
 
   return (
     <main className="min-h-screen bg-[#fafbff] bg-page-gradient">
-      {/* Contact Bar */}
-      <ContactBar containerClassName="max-w-5xl" />
-
-      {/* Nav Strip */}
-      <motion.nav 
-        variants={fadeIn} initial="hidden" animate="show"
-        className="border-b border-slate-200 px-6 py-4 bg-white/50 backdrop-blur-md"
-      >
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-            <BrandLogo size={32} showText={false} />
-          </a>
-          <a
-            href="https://alien.fi/services/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors"
-          >
-            ← All AI services
-          </a>
-        </div>
-      </motion.nav>
+      <Header />
 
       <div className="max-w-5xl mx-auto px-4 py-12 md:py-20">
         {/* Hero */}

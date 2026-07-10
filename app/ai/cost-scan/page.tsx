@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ContactBar } from "@/shared/components/ContactBar";
-import { BrandLogo } from "@/components/BrandLogo";
+import { Header } from "@/components/Header";
 import { Target, Lightbulb, ClipboardList } from "lucide-react";
 import { CostScanWizard } from "@/modules/cost-audit/questions/CostScanWizard";
 
@@ -20,27 +19,7 @@ export const metadata: Metadata = {
 export default function AiCostScanPage() {
   return (
     <main className="min-h-screen bg-[#eef4ff] bg-page-gradient">
-      {/* ── Top Contact Bar ──────────────────────────────────────────── */}
-      <ContactBar containerClassName="max-w-5xl" />
-
-      {/* ── Nav strip ──────────────────────────────────────────────── */}
-      <nav 
-        className="border-b border-slate-200 px-6 py-4 bg-white/50 backdrop-blur-md"
-      >
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-            <BrandLogo size={32} showText={false} />
-          </a>
-          <a
-            href="https://alien.fi/services/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors"
-          >
-            ← All AI services
-          </a>
-        </div>
-      </nav>
+      <Header />
 
       <div className="max-w-5xl mx-auto px-4 py-12 md:py-20">
         {/* ── Hero ───────────────────────────────────────────────── */}
