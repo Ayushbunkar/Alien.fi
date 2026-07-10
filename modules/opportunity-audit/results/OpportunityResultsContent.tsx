@@ -165,7 +165,7 @@ export default function OpportunityResultsContent() {
        >
          <div className="max-w-4xl mx-auto flex items-center justify-between">
            <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-             <Image src="/assets/logo/logo.jpg" alt="Alien.fi" width={160} height={48} className="h-12 w-auto object-contain" style={{ mixBlendMode: 'multiply' }} />
+             <Image src="/assets/logo/logo.jpg" alt="Alien.fi" width={160} height={48} className="h-12 w-auto object-contain" style={{ filter: 'invert(1)', mixBlendMode: 'multiply' }} />
            </a>
            <button
              onClick={() => router.push("/ai/opportunity-scan")}
