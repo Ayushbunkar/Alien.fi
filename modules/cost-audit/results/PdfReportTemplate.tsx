@@ -280,7 +280,7 @@ export const PdfReportTemplate: React.FC<Props> = ({ result }) => {
 
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <img src="/assets/logo/logo.jpg" alt="Alien.fi" style={{ height: "32px", width: "auto", objectFit: "contain", filter: 'invert(1)', mixBlendMode: 'multiply' }} />
+                <img src="/assets/logo/logo.jpg" alt="Alien.fi" style={{ height: "32px", width: "auto", objectFit: "contain" }} />
                 <div style={{ height: "16px", width: "1px", backgroundColor: "#e2e8f0", margin: "0 4px" }} />
                 <p style={{ margin: 0, fontSize: "10px", color: "#94a3b8" }}>contact@Alien.fi.org • +1 (657) 200-1336</p>
               </div>
@@ -304,7 +304,7 @@ export const PdfReportTemplate: React.FC<Props> = ({ result }) => {
               
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <img src="/assets/logo/logo.jpg" alt="Alien.fi" style={{ height: "36px", width: "auto", objectFit: "contain", filter: 'invert(1)', mixBlendMode: 'multiply' }} />
+                  <img src="/assets/logo/logo.jpg" alt="Alien.fi" style={{ height: "36px", width: "auto", objectFit: "contain" }} />
                   <div style={{ height: "18px", width: "1px", backgroundColor: "#e2e8f0", margin: "0 4px" }} />
                   <span style={{ fontSize: "10px", fontWeight: "750", color: "#334155", textTransform: "uppercase", letterSpacing: "0.5px" }}>Cost Audit Report</span>
                 </div>
@@ -363,7 +363,7 @@ export const PdfReportTemplate: React.FC<Props> = ({ result }) => {
 
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <img src="/assets/logo/logo.jpg" alt="Alien.fi" style={{ height: "24px", width: "auto", objectFit: "contain", filter: 'invert(1)', mixBlendMode: 'multiply' }} />
+                  <img src="/assets/logo/logo.jpg" alt="Alien.fi" style={{ height: "24px", width: "auto", objectFit: "contain" }} />
                   <p style={{ margin: 0, fontSize: "9px", color: "#94a3b8" }}>Ref: #{result.submissionId.slice(0, 8).toUpperCase()} • Detailed AI Cost Audit</p>
                 </div>
                 <div style={{ textAlign: "right" }}>
