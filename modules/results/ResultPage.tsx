@@ -2,9 +2,8 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
-import { BrandLogo } from "@/components/BrandLogo";
-
 import { Header } from "@/components/Header";
+import * as motion from "framer-motion/client";
 import { slideUp, staggerContainer, fadeIn } from "@/shared/components/animations";
 
 import { ArrowLeft } from "lucide-react";
