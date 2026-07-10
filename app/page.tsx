@@ -602,9 +602,8 @@ function Header() {
     <header className="sticky top-0 z-50 bg-[#9BED58] border-b border-black/10">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-[70px]">
-          {/* Logo */}
           <a href="/" className="flex items-center hover:opacity-90 transition-opacity">
-            <BrandLogo size={32} showText={false} />
+            <BrandLogo size={60} showText={false} />
           </a>
 
           {/* Nav Links */}
