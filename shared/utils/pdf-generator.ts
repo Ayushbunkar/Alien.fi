@@ -863,7 +863,13 @@ export function generateBasicTextPdf(data: ReportData, logoBuffer: Buffer | null
 }
 
 export async function generatePdf(data: ReportData): Promise<Buffer> {
-  const logoBuffer: Buffer | null = null;
+  let logoBuffer: Buffer | null = null;
+  try {
+    const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo.png");
+    if (fs.existsSync(logoPath)) {
+      logoBuffer = fs.readFileSync(logoPath);
+    }
+  } catch (e) {}
   const logoBase64 = await loadLogoBase64();
   data.logoBase64 = logoBase64;
   
