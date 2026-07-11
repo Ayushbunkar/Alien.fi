@@ -1,4 +1,4 @@
-  import { ReportData, renderReportToHtml } from "./report-content-generator";
+import { ReportData, renderReportToHtml } from "./report-content-generator";
 import { BrowserFactory } from "./browser-factory";
 import { Logger } from "./logger";
 import fs from "fs";
@@ -23,7 +23,10 @@ export function getTierStyles(tier: number) {
 export async function loadLogoBase64(): Promise<string> {
   try {
     const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo.png");
-    if (fs.existsSync(logoPath)) {
+    console.log(`[pdf-generator] Checking for logo at: ${logoPath}`);
+    const exists = fs.existsSync(logoPath);
+    console.log(`[pdf-generator] Logo exists: ${exists}`);
+    if (exists) {
       const logoData = fs.readFileSync(logoPath);
       return `data:image/png;base64,${logoData.toString("base64")}`;
     }
@@ -273,7 +276,7 @@ export function generateBasicTextPdf(data: ReportData, logoBuffer: Buffer | null
   if (data.reportType === "cost") {
     const drawContainer = (title: string, heightNeeded: number, drawContent: () => void) => {
        checkSpace(heightNeeded);
-       const boxTop = currentY;
+       const boxTop = currentY + 20;
        
        // Draw title
        drawText(title, 40, 'F2', 14, 0.06, 0.09, 0.16);
@@ -510,7 +513,7 @@ export function generateBasicTextPdf(data: ReportData, logoBuffer: Buffer | null
   } else if (data.reportType === "opportunity") {
     const drawContainer = (title: string, heightNeeded: number, drawContent: () => void) => {
        checkSpace(heightNeeded);
-       const boxTop = currentY + 10;
+       const boxTop = currentY + 20;
        drawText(title, 40, 'F2', 14, 0.06, 0.09, 0.16);
        currentY -= 20;
        drawContent();
