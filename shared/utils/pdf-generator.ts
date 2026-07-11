@@ -4,6 +4,7 @@ import { Logger } from "./logger";
 import fs from "fs";
 import path from "path";
 import scoreDescriptions from "../config/score-descriptions.json";
+import sharp from "sharp";
 
 // ── RAG Color Config ───────────────────────────────────────────────────────────────
 
@@ -867,9 +868,13 @@ export async function generatePdf(data: ReportData): Promise<Buffer> {
   try {
     const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo.png");
     if (fs.existsSync(logoPath)) {
-      logoBuffer = fs.readFileSync(logoPath);
+      const pngBuffer = fs.readFileSync(logoPath);
+      // Flatten on a white background and convert to JPEG for the basic PDF generator
+      logoBuffer = await sharp(pngBuffer).flatten({ background: { r: 255, g: 255, b: 255 } }).jpeg({ quality: 90 }).toBuffer();
     }
-  } catch (e) {}
+  } catch (e) {
+    Logger.error(`[pdf-generator] Failed to load logo for basic PDF: ${e}`);
+  }
   const logoBase64 = await loadLogoBase64();
   data.logoBase64 = logoBase64;
   
