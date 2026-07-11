@@ -869,8 +869,8 @@ export async function generatePdf(data: ReportData): Promise<Buffer> {
     const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo.png");
     if (fs.existsSync(logoPath)) {
       const pngBuffer = fs.readFileSync(logoPath);
-      // Flatten on a white background and convert to JPEG for the basic PDF generator
-      logoBuffer = await sharp(pngBuffer).flatten({ background: { r: 255, g: 255, b: 255 } }).jpeg({ quality: 90 }).toBuffer();
+      // Flatten on the green header background color (#96EE52 / RGB: 150, 237, 82) so the black transparent logo blends seamlessly
+      logoBuffer = await sharp(pngBuffer).flatten({ background: { r: 150, g: 237, b: 82 } }).jpeg({ quality: 90 }).toBuffer();
     }
   } catch (e) {
     Logger.error(`[pdf-generator] Failed to load logo for basic PDF: ${e}`);
