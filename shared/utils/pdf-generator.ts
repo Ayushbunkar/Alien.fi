@@ -295,7 +295,7 @@ export function generateBasicTextPdf(data: ReportData, logoBuffer: Buffer | null
        // Perfect!
        currentPage.shapes.unshift(`0.88 0.91 0.94 RG\n1 w\n${roundedRectPath(20, boxBottom - 10, 555, boxHeight, 8)} S`);
        
-       currentY = boxBottom - 30; // space after container
+       currentY = boxBottom - 60; // space after container
     };
 
     // 1. Savings Projection
@@ -520,7 +520,7 @@ export function generateBasicTextPdf(data: ReportData, logoBuffer: Buffer | null
        const boxBottom = currentY;
        const boxHeight = boxTop - boxBottom + 15;
        currentPage.shapes.unshift(`0.88 0.91 0.94 RG\n1 w\n${roundedRectPath(20, boxBottom - 10, 555, boxHeight, 8)} S`);
-       currentY = boxBottom - 30;
+       currentY = boxBottom - 60;
     };
 
     drawContainer("VALUE PROJECTION AND NEXT STEPS", 250, () => {
