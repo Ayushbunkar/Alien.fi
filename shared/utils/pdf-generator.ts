@@ -81,7 +81,7 @@ export function generateBasicTextPdf(data: ReportData, logoBuffer: Buffer | null
     currentPage.shapes.push(`0.59 0.93 0.32 rg\n0 790 595.28 52 re f`); 
     
     if (logoBuffer) {
-      currentPage.shapes.push(`q 54 0 0 36 30 791 cm /Im1 Do Q`); // 1.5 aspect ratio (54x36)
+      currentPage.shapes.push(`q 75 0 0 50 30 791 cm /Im1 Do Q`); // 1.5 aspect ratio (75x50)
     } else {
       currentPage.textLines.push({ text: "Alien", x: 30, y: 810, font: 'F2', size: 22, r: 0.08, g: 0.09, b: 0.17 });
       currentPage.textLines.push({ text: ".fi", x: 88, y: 810, font: 'F2', size: 22, r: 0.13, g: 0.77, b: 0.36 });
@@ -872,6 +872,7 @@ export async function generatePdf(data: ReportData): Promise<Buffer> {
       // Resize exactly to 150x100 (which the PDF dictionary expects), fit contain to preserve aspect ratio
       // Flatten on the green header background color (#96EE52 / RGB: 150, 237, 82) so the black transparent logo blends seamlessly
       logoBuffer = await sharp(pngBuffer)
+        .trim()
         .resize(150, 100, { fit: 'contain', background: { r: 150, g: 237, b: 82, alpha: 1 } })
         .flatten({ background: { r: 150, g: 237, b: 82 } })
         .jpeg({ quality: 90 })
