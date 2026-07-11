@@ -869,8 +869,13 @@ export async function generatePdf(data: ReportData): Promise<Buffer> {
     const logoPath = path.join(process.cwd(), "public", "assets", "logo", "logo.png");
     if (fs.existsSync(logoPath)) {
       const pngBuffer = fs.readFileSync(logoPath);
+      // Resize exactly to 150x100 (which the PDF dictionary expects), fit contain to preserve aspect ratio
       // Flatten on the green header background color (#96EE52 / RGB: 150, 237, 82) so the black transparent logo blends seamlessly
-      logoBuffer = await sharp(pngBuffer).flatten({ background: { r: 150, g: 237, b: 82 } }).jpeg({ quality: 90 }).toBuffer();
+      logoBuffer = await sharp(pngBuffer)
+        .resize(150, 100, { fit: 'contain', background: { r: 150, g: 237, b: 82, alpha: 1 } })
+        .flatten({ background: { r: 150, g: 237, b: 82 } })
+        .jpeg({ quality: 90 })
+        .toBuffer();
     }
   } catch (e) {
     Logger.error(`[pdf-generator] Failed to load logo for basic PDF: ${e}`);
